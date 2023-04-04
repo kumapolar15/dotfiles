@@ -1,0 +1,10 @@
+[user]
+	name = kumapolar15
+	email = kumapolar15.pg@gmail.com
+[include]
+	path = ~/.gitconfig-company
+[core]
+	editor = nvim
+[alias]
+	co = checkout
+	cm = commit
