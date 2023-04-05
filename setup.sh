@@ -11,4 +11,5 @@ fi
 cd "$DOTFILES_REPO"
 git ls-files | grep -e '^\.' | while read DOTFILE; do
   echo "シンボリックリンクを貼ります：$DOTFILE"
+  ln -sf "$DOTFILES_REPO/$DOTFILE" "$HOME/$DOTFILE"
 done
