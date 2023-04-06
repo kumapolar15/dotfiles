@@ -3,6 +3,7 @@ eval "$(sheldon source)"
 alias du='du -h'
 alias .b='nvim ~/.bashrc'
 alias .z='nvim ~/.zshrc'
+alias ls='ls --color=auto'
 
 select-history() {
   BUFFER=$(history -n -r 1 | fzf --query "$BUFFER")
@@ -20,4 +21,9 @@ function brew-bundle-dump() {
 brew() {
   command brew $@
   brew-bundle-dump
+}
+
+zshaddhistory() {
+  local line="${1%%$'\n'}"
+  [[ ! "$line" =~ "^(cd|jj?|lazygit|la|ll|ls|rm|rmdir)($| )" ]]
 }
