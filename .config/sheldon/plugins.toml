@@ -19,14 +19,15 @@ github = "romkatv/zsh-defer"
 apply = ["source"]
 
 [templates]
-defer = ""
+defer = "{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}"
+PATH = 'export PATH="$PATH:{{ dir }}"'
 
 [plugins.compinit]
 inline = 'autoload -Uz compinit && zsh-defer compinit'
 
 [plugins.fast-syntax-highlighting]
 github = "zdharma/fast-syntax-highlighting"
-apply = ["source"]
+# apply = ["source"]
 
 [plugins.zsh-completions]
 github = "zsh-users/zsh-completions"
@@ -36,7 +37,7 @@ github = "zsh-users/zsh-autosuggestions"
 
 [plugins.powerlevel10k]
 github = "romkatv/powerlevel10k"
-apply = ["source"]
+# apply = ["source"]
 
 [plugins.dotfiles-defers]
 local = "~/dotfiles/zsh"
