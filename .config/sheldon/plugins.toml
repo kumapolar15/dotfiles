@@ -27,7 +27,6 @@ inline = 'autoload -Uz compinit && zsh-defer compinit'
 
 [plugins.fast-syntax-highlighting]
 github = "zdharma/fast-syntax-highlighting"
-# apply = ["source"]
 
 [plugins.zsh-completions]
 github = "zsh-users/zsh-completions"
@@ -41,7 +40,6 @@ github = "asdf-vm/asdf"
 
 [plugins.powerlevel10k]
 github = "romkatv/powerlevel10k"
-# apply = ["source"]
 
 [plugins.dotfiles-defers]
 local = "~/dotfiles/zsh"
