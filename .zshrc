@@ -27,3 +27,7 @@ zshaddhistory() {
   local line="${1%%$'\n'}"
   [[ ! "$line" =~ "^(cd|jj?|lazygit|la|ll|ls|rm|rmdir)($| )" ]]
 }
+
+
+. /usr/local/opt/asdf/libexec/asdf.sh
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#586e75"

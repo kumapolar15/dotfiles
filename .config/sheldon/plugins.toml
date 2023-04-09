@@ -34,6 +34,10 @@ github = "zsh-users/zsh-completions"
 
 [plugins.zsh-autosuggestions]
 github = "zsh-users/zsh-autosuggestions"
+apply = ["source"]
+
+[plugins.asdf]
+github = "asdf-vm/asdf"
 
 [plugins.powerlevel10k]
 github = "romkatv/powerlevel10k"
