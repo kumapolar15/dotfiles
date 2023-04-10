@@ -5,12 +5,35 @@ alias .b='nvim ~/.bashrc'
 alias .z='nvim ~/.zshrc'
 alias ls='ls --color=auto'
 
+export HISTSIZE=12000
+export SAVEHIST=10000
+
+setopt AUTO_PUSHD
+setopt PUSHD_IGNORE_DUPS
+setopt GLOBDOTS
+setopt APPEND_HISTORY
+setopt EXTENDED_HISTORY
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_REDUCE_BLANKS
+setopt HIST_SAVE_NO_DUPS
+setopt INTERACTIVE_COMMENTS
+setopt NO_SHARE_HISTORY
+setopt MAGIC_EQUAL_SUBST
+setopt PRINT_EIGHT_BIT
+setopt NO_FLOW_CONTROL
+
 select-history() {
   BUFFER=$(history -n -r 1 | fzf --query "$BUFFER")
   CURSOR=$#BUFFER
 }
 zle -N select-history
-# bindkey '^r' select-history
+bindkey '^r' select-history
+
+zshaddhistory() {
+  local line="${1%%$'\n'}"
+  [[ ! "$line" =~ "^(cd|jj?|lazygit|la|ll|ls|rm|rmdir)($| )" ]]
+}
 
 BREWFILE="$HOME/.Brewfile"
 
@@ -21,11 +44,6 @@ function brew-bundle-dump() {
 brew() {
   command brew $@
   brew-bundle-dump
-}
-
-zshaddhistory() {
-  local line="${1%%$'\n'}"
-  [[ ! "$line" =~ "^(cd|jj?|lazygit|la|ll|ls|rm|rmdir)($| )" ]]
 }
 
 
@@ -43,8 +61,6 @@ if [[ -n $ZENO_LOADED ]]; then
   bindkey ' ' zeno-auto-snippet
   bindkey '^m' zeno-auto-snippet-and-accept-line
   bindkey '^i' zeno-completion
-  bindkey '^g' zeno-ghq-cd
-  bindkey '^r' zeno-history-selection
   bindkey '^x' zeno-insert-snippet
 fi
 
