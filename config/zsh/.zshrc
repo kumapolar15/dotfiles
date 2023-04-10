@@ -13,6 +13,7 @@ fpath=(
 	"$fpath[@]"
 )
 
+export HISTFILE="$XDG_STATE_HOME/zsh_history"
 export HISTSIZE=12000
 export SAVEHIST=10000
 
@@ -46,7 +47,7 @@ zshaddhistory() {
 
 alias du='du -h'
 alias .b='nvim ~/.bashrc'
-alias .z='nvim ~/.zshrc'
+alias .z='nvim ~/.config/zsh/.zshrc'
 alias ls='ls --color=auto'
 
 BREWFILE="$HOME/.Brewfile"
