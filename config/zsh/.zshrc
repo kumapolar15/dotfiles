@@ -1,9 +1,17 @@
 eval "$(sheldon source)"
 
-alias du='du -h'
-alias .b='nvim ~/.bashrc'
-alias .z='nvim ~/.zshrc'
-alias ls='ls --color=auto'
+path=(
+	"$HOME/.local/bin"(N-/)
+	"$CARGO_HOME/bin"(N-/)
+	"$DENO_INSTALL/bin"(N-/)
+	"$XDG_CONFIG_HOME/scripts/bin"(N-/)
+	"$path[@]"
+)
+
+fpath=(
+	"$XDG_DATA_HOME/zsh/completions"(N-/)
+	"$fpath[@]"
+)
 
 export HISTSIZE=12000
 export SAVEHIST=10000
@@ -35,6 +43,12 @@ zshaddhistory() {
   [[ ! "$line" =~ "^(cd|jj?|lazygit|la|ll|ls|rm|rmdir)($| )" ]]
 }
 
+
+alias du='du -h'
+alias .b='nvim ~/.bashrc'
+alias .z='nvim ~/.zshrc'
+alias ls='ls --color=auto'
+
 BREWFILE="$HOME/.Brewfile"
 
 function brew-bundle-dump() {
@@ -46,12 +60,8 @@ brew() {
   brew-bundle-dump
 }
 
-
-# . /usr/local/opt/asdf/libexec/asdf.sh
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#586e75"
 
-export DENO_INSTALL=~/.deno
-export PATH="$PATH:$DENO_INSTALL/bin"
 export ZENO_HOME=~/.config/zeno
 export ZENO_ENABLE_SOCK=1
 export ZENO_GIT_CAT="cat"

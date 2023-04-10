@@ -43,13 +43,14 @@ apply = ["source"]
 
 [plugins.powerlevel10k]
 github = "romkatv/powerlevel10k"
+use = ["{{ name }}.zsh-theme"]
 apply = ["source"]
 
 [plugins.dotfiles-defers]
-local = "~/dotfiles/zsh"
+local = "~/dotfiles/config/zsh"
 use = ["{!sync,*}.zsh"]
 
 [plugins.dotfiles-sync]
-local = "~/dotfiles/zsh"
+local = "~/dotfiles/config/zsh"
 use = ["sync.zsh"]
 apply = ["source"]
