@@ -33,11 +33,9 @@ github = "zsh-users/zsh-completions"
 
 [plugins.zsh-autosuggestions]
 github = "zsh-users/zsh-autosuggestions"
-apply = ["source"]
 
 [plugins.asdf]
 github = "asdf-vm/asdf"
-# apply = ["PATH"]
 
 [plugins.zeno]
 github = "yuki-yano/zeno.zsh.git"
@@ -45,6 +43,7 @@ apply = ["source"]
 
 [plugins.powerlevel10k]
 github = "romkatv/powerlevel10k"
+apply = ["source"]
 
 [plugins.dotfiles-defers]
 local = "~/dotfiles/zsh"

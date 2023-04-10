@@ -32,6 +32,8 @@ zshaddhistory() {
 # . /usr/local/opt/asdf/libexec/asdf.sh
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#586e75"
 
+export DENO_INSTALL=~/.deno
+export PATH="$PATH:$DENO_INSTALL/bin"
 export ZENO_HOME=~/.config/zeno
 export ZENO_ENABLE_SOCK=1
 export ZENO_GIT_CAT="cat"
