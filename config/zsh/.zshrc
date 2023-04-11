@@ -44,6 +44,33 @@ zshaddhistory() {
   [[ ! "$line" =~ "^(cd|jj?|lazygit|la|ll|ls|rm|rmdir)($| )" ]]
 }
 
+function tree_select() {
+  tree -N -a --charset=o -f -I '.git|.idea|resolution-cache|target/streams|node_modules|vendor' | \
+    fzf --preview 'f() {
+      set -- $(echo -- "$@" | grep -o "\./.*$");
+      if [ -d $1 ]; then
+        ls -lh $1
+      else
+        head -n 100 $1
+      fi
+    }; f {}' | \
+      sed -e "s/ ->.*\$//g" | \
+      tr -d '\||`| ' | \
+      tr '\n' ' ' | \
+      sed -e "s/--//g" | \
+      xargs echo
+}
+
+function tree_select_buffer(){
+  local SELECTED_FILE=$(tree_select)
+  if [ -n "$SELECTED_FILE" ]; then
+    LBUFFER+="$SELECTED_FILE"
+    CURSOR=$#LBUFFER
+    zle reset-prompt
+  fi
+}
+zle -N tree_select_buffer
+bindkey "^t" tree_select_buffer
 
 alias du='du -h'
 alias .b='nvim ~/.bashrc'
