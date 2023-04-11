@@ -76,6 +76,7 @@ alias du='du -h'
 alias .b='nvim ~/.bashrc'
 alias .z='nvim ~/.config/zsh/.zshrc'
 alias ls='ls --color=auto'
+alias tmux='tmux -u'
 
 BREWFILE="$HOME/.Brewfile"
 

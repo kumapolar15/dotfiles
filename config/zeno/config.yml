@@ -1,10 +1,18 @@
 snippets:
-  # snippet and keyword abbrev
+  - name: g
+    keyword: g
+    snippet: git
+
+  - name: yyyymmdd
+    keyword: yyyymmdd
+    snippet: date "+%Y%m%d"
+    evaluate: true
+    global: true
+
   - name: git status
     keyword: gs
     snippet: git status --short --branch
 
-  # snippet with placeholder
   - name: git commit message
     keyword: gcim
     snippet: git commit -m '{{commit_message}}'
@@ -12,23 +20,37 @@ snippets:
   - name: "null"
     keyword: "null"
     snippet: ">/dev/null 2>&1"
-    # auto expand condition
-    # If not defined, it is only valid at the beginning of a line.
     context:
-      # buffer: ''
       lbuffer: '.+\s'
-      # rbuffer: ''
 
   - name: branch
     keyword: B
     snippet: git symbolic-ref --short HEAD
     context:
       lbuffer: '^git\s+checkout\s+'
-    evaluate: true # eval snippet
+    evaluate: true
+
+  - name: .zshrc
+    keyword: zsh.conf
+    snippet: $ZDOTDIR/.zshrc
+    global: true
+
+  - name: sheldon toml
+    keyword: sheldon.conf
+    snippet: $XDG_CONFIG_HOME/sheldon/plugins.toml
+    global: true
+
+  - name: zeno config.yml
+    keyword: zeno.conf
+    snippet: $XDG_CONFIG_HOME/zeno/config.yml
+    global: true
+
+  - name: nvim
+    keyword: v
+    snippet: nvim
 
 
 completions:
-  # simple sourceCommand, no callback
   - name: kill signal
     patterns:
       - "^kill -s $"
@@ -36,12 +58,10 @@ completions:
     options:
       --prompt: "'Kill Signal> '"
 
-  # use excludePatterns and callback
   - name: kill pid
     patterns:
       - "^kill( .*)? $"
     excludePatterns:
-      # -l, -n or -s is followed by SIGNAL instead of PID
       - " -[lns] $"
     sourceCommand: "LANG=C ps -ef | sed 1d"
     options:
@@ -49,15 +69,13 @@ completions:
       --prompt: "'Kill Process> '"
     callback: "awk '{print $2}'"
 
-  # Use null (\0) termination Input / Output
   - name: chdir
     patterns:
       - "^cd $"
     sourceCommand: "find . -path '*/.git' -prune -o -maxdepth 5 -type d -print0"
     options:
-      # Added --read0 if null termination is used in `sourceCommand` output.
       --read0: true
       --prompt: "'Chdir> '"
       --preview: "cd {} && ls -a | sed '/^[.]*$/d'"
     callback: "cut -z -c 3-"
-    callbackZero: true  # null termination is used in `callback` I/O
+    callbackZero: true
