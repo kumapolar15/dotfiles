@@ -1,0 +1,22 @@
+{
+    "workspace.library": [
+        "/Users/kumashirokazeto/.config/nvim",
+        "/Users/kumashirokazeto/.local/share/nvim/site",
+        "/Users/kumashirokazeto/.local/share/nvim/site/pack/packer/start/colorbuddy.nvim",
+        "/Users/kumashirokazeto/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+        "/Users/kumashirokazeto/.local/share/nvim/site/pack/packer/start/neosolarized.nvim",
+        "/Users/kumashirokazeto/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+        "/Users/kumashirokazeto/.local/share/nvim/site/pack/packer/start/packer.nvim",
+        "/usr/local/Cellar/neovim/0.8.3/share/nvim/runtime",
+        "/usr/local/Cellar/neovim/0.8.3/share/nvim/runtime/pack/dist/opt/matchit",
+        "/usr/local/Cellar/neovim/0.8.3/lib/nvim",
+        "/Users/kumashirokazeto/.config/nvim/after",
+        "${3rd}/luassert/library",
+        "${3rd}/OpenResty/library"
+    ],
+    "runtime.version": "LuaJIT",
+    "diagnostics.globals": [
+        "vim",
+        "ngx"
+    ]
+}
