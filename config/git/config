@@ -8,3 +8,6 @@
 [alias]
 	co = checkout
 	cm = commit
+[ghq]
+  root = ~/src
+
