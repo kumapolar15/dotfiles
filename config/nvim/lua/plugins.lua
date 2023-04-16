@@ -42,4 +42,10 @@ packer.startup(function(use)
 
   use 'lewis6991/gitsigns.nvim'
   use 'dinhhuy258/git.nvim' -- For git blame & browse
+
+  use 'kassio/neoterm'      -- Terminal
+  use {
+    'vim-test/vim-test',    -- Run Test
+    requires = { 'kassio/neoterm' }
+  }
 end)
