@@ -5,7 +5,11 @@ if (not status2) then return end
 
 mason.setup {}
 lspconfig.setup {
-  ensure_installed = { 'tailwindcss' }
+  ensure_installed = {
+    'tailwindcss',
+    'intelephense'
+  }
 }
 
 require 'lspconfig'.tailwindcss.setup {}
+require 'lspconfig'.intelephense.setup {}
