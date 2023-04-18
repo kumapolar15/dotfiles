@@ -1,5 +1,9 @@
 eval "$(sheldon source)"
 
+if [ -e "$HOME/.zshrc.local" ] ; then
+  source "$HOME/.zshrc.local"
+fi
+
 path=(
 	"$HOME/.local/bin"(N-/)
 	"$CARGO_HOME/bin"(N-/)

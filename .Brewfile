@@ -12,6 +12,7 @@ brew "awscli"
 brew "php"
 brew "composer"
 brew "deno"
+brew "docker", link: false
 brew "fd"
 brew "fzf"
 brew "libfido2"
