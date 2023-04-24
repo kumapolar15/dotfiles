@@ -9,6 +9,10 @@ export XDG_CACHE_HOME="$HOME/.cache"
 
 ### zsh ###
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+export ZHOMEDIR="$XDG_CONFIG_HOME/zsh"
+export ZRCDIR="$ZHOMEDIR/rc"
+export ZDATADIR="$XDG_DATA_HOME/zsh"
+export ZCACHEDIR="$XDG_CACHE_HOME/zsh"
 
 ### Rust ###
 export RUST_BACKTRACE=1

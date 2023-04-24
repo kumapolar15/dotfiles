@@ -1,4 +1,40 @@
+# ======================================================================
+# .zshrc
+# ======================================================================
+
 eval "$(sheldon source)"
+
+
+# ----------------------------------------------------------------------
+# Base Configuration
+# ----------------------------------------------------------------------
+source "$ZRCDIR/base.zsh"
+
+# ----------------------------------------------------------------------
+# Options
+# ----------------------------------------------------------------------
+source "$ZRCDIR/option.zsh"
+
+# ----------------------------------------------------------------------
+# Completion
+# ----------------------------------------------------------------------
+source "$ZRCDIR/completion.zsh"
+
+# ----------------------------------------------------------------------
+# Function
+# ----------------------------------------------------------------------
+source "$ZRCDIR/function.zsh"
+
+# ----------------------------------------------------------------------
+# Aliases
+# ----------------------------------------------------------------------
+source "$ZRCDIR/alias.zsh"
+
+# ----------------------------------------------------------------------
+# Key Bindings
+# ----------------------------------------------------------------------
+source "$ZRCDIR/bindkey.zsh"
+
 
 if [ -e "$HOME/.zshrc.local" ] ; then
   source "$HOME/.zshrc.local"
@@ -17,24 +53,6 @@ fpath=(
 	"$fpath[@]"
 )
 
-export HISTFILE="$XDG_STATE_HOME/zsh_history"
-export HISTSIZE=12000
-export SAVEHIST=10000
-
-setopt AUTO_PUSHD
-setopt PUSHD_IGNORE_DUPS
-setopt GLOBDOTS
-setopt APPEND_HISTORY
-setopt EXTENDED_HISTORY
-setopt HIST_IGNORE_ALL_DUPS
-setopt HIST_IGNORE_SPACE
-setopt HIST_REDUCE_BLANKS
-setopt HIST_SAVE_NO_DUPS
-setopt INTERACTIVE_COMMENTS
-setopt NO_SHARE_HISTORY
-setopt MAGIC_EQUAL_SUBST
-setopt PRINT_EIGHT_BIT
-setopt NO_FLOW_CONTROL
 
 select-history() {
   BUFFER=$(history -n -r 1 | fzf --query "$BUFFER")
@@ -75,12 +93,6 @@ function tree_select_buffer(){
 }
 zle -N tree_select_buffer
 bindkey "^t" tree_select_buffer
-
-alias du='du -h'
-alias .b='nvim ~/.bashrc'
-alias .z='nvim ~/.config/zsh/.zshrc'
-alias ls='ls --color=auto'
-alias tmux='tmux -u'
 
 BREWFILE="$HOME/.Brewfile"
 
