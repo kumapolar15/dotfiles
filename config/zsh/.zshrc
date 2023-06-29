@@ -92,7 +92,7 @@ function tree_select_buffer(){
   fi
 }
 zle -N tree_select_buffer
-bindkey "^t" tree_select_buffer
+bindkey "^p" tree_select_buffer
 
 BREWFILE="$HOME/.Brewfile"
 
