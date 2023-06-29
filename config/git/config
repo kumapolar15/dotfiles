@@ -5,6 +5,7 @@
 	path = ~/.gitconfig-company
 [core]
 	editor = nvim
+	pager = less
 [alias]
 	co = checkout
 	cm = commit
