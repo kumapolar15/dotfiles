@@ -3,6 +3,7 @@ vim.cmd('autocmd!')
 vim.scriptencoding = 'utf-8'
 vim.opt.encoding = 'utf-8'
 vim.opt.fileencoding = 'utf-8'
+vim.cmd('language en_US.UTF-8')
 
 vim.wo.number = true
 
@@ -21,8 +22,8 @@ vim.opt.inccommand = 'split'
 vim.opt.ignorecase = true
 vim.opt.smarttab = true
 vim.opt.breakindent = true
-vim.opt.shiftwidth = 2
-vim.opt.tabstop = 2
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
 vim.opt.ai = true            -- Auto indent
 vim.opt.si = true            -- Smart indent
 vim.opt.wrap = true          -- wrap lines
