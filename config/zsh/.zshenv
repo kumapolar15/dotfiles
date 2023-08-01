@@ -1,5 +1,5 @@
 ### locale ###
-export LANG="ja_JP.utf8"
+export LANG="ja_JP.UTF-8"
 
 ### XDG ###
 export XDG_CONFIG_HOME="$HOME/.config"
