@@ -44,3 +44,8 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 
 -- Add asterisks in block comments
 vim.opt.formatoptions:append { 'r' }
+
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
+  pattern = { "*.lua", "*.vue,", "*.ts", "*.json" },
+  command = "set shiftwidth=2 | set tabstop=2"
+})
