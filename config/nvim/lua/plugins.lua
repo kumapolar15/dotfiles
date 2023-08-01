@@ -48,4 +48,5 @@ packer.startup(function(use)
     'vim-test/vim-test',    -- Run Test
     requires = { 'kassio/neoterm' }
   }
+  use 'joonty/vdebug' -- Xdebug
 end)
