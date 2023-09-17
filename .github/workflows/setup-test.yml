@@ -1,0 +1,16 @@
+name: "setup script test"
+
+on: [push]
+
+jobs:
+  ubuntu:
+    runs-on: ubuntu-latest
+    container: ubuntu:latest
+    steps:
+      - users: actions/checkout@v3
+      - name: Install required packages
+        run: apt-get update && apt-get install -y git sudo curl file
+      - name: set homebrew path
+        run: echo "/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin" >> $GITHUB_PATH
+      - name: Install dotfiles
+        run: setup.sh
