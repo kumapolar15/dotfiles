@@ -11,6 +11,6 @@ jobs:
       - name: Install required packages
         run: apt-get update && apt-get install -y git sudo curl file make
       - name: set homebrew path
-        run: echo "/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin" >> $GITHUB_PATH
+        run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
       - name: Install dotfiles
         run: make setup
