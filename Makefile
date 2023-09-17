@@ -7,5 +7,5 @@ down:
 bash:
 	docker compose exec ubuntu zsh
 setup:
-  ./scripts/install.sh
-  ./scripts/set-link.sh
+	./scripts/install.sh
+	./scripts/set-link.sh
