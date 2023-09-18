@@ -1,10 +1,10 @@
-build:
+dc.build:
 	docker compose build --no-cache
-up:
+dc.up:
 	docker compose up -d
-down:
+dc.down:
 	docker compose down
-bash:
+dc.bash:
 	docker compose exec ubuntu zsh
 setup:
 	./scripts/install.sh
