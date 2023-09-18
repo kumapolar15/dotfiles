@@ -56,16 +56,16 @@ package_install() {
   if [ "$os_name" = "Linux" ]; then
     linux_distribution=$(get_linux_distribution)
     if [ "$linux_distribution" = "ubuntu" ] || [ "$linux_distribution" = "debian" ]; then
-      apt-get update
-      apt-get install -y "${args[*]}"
+      sudo apt-get update
+      sudo apt-get install -y "${args[*]}"
     elif [ "$linux_distribution" = "oracle" ] || [ "$linux_distribution" = "redhat" ]; then
-      yum update
-      yum install -y "${args[*]}"
+      sudo yum update
+      sudo yum install -y "${args[*]}"
     elif [ "$linux_distribution" = "arch" ]; then
-      pacman -Syu --noconfirm
-      pacman -S --noconfirm "${args[*]}"
+      sudo pacman -Syu --noconfirm
+      sudo pacman -S --noconfirm "${args[*]}"
     elif [ "$linux_distribution" = "alpine" ]; then
-      apk add "${args[*]}"
+      sudo apk add "${args[*]}"
     fi
   fi
 }
