@@ -6,5 +6,5 @@ mkdir -p \
   "$XDG_STATE_HOME" \
   "$XDG_DATA_HOME"
 
-ls "$DOTFILES_REPO/config" | xargs -p -I {} ln -sfv "$DOTFILES_REPO/config/"{} "$XDG_CONFIG_HOME/"{}
+ls "$DOTFILES_REPO/config" | xargs -I {} ln -sfv "$DOTFILES_REPO/config/"{} "$XDG_CONFIG_HOME/"{}
 ln -sfv "$XDG_CONFIG_HOME/zsh/.zshenv" "$HOME/.zshenv"
