@@ -1,2 +1,2 @@
 #!/bin/bash -xe
-source "$(dirname "$0")/installer/zsh_installer.sh"
+./installer/zsh_installer.sh
