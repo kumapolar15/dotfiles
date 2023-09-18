@@ -1,0 +1,34 @@
+name: "setup script test"
+
+on: [push]
+
+jobs:
+  ubuntu:
+    runs-on: ubuntu-latest
+    container: ubuntu:latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install required packages
+        run: apt-get update && apt-get install -y git sudo curl file make
+      - name: Install dotfiles
+        run: make setup
+  alpine:
+    runs-on: ubuntu-latest
+    container: alpine:latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install required packages
+        run: apk add git sudo curl file make bash
+      - name: Install dotfiles
+        run: make setup
+  arch:
+    runs-on: ubuntu-latest
+    container: archlinux:latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Update packages
+        run: pacman -Syu --noconfirm
+      - name: Install required packages
+        run: pacman -S --noconfirm git sudo curl file make
+      - name: Install dotfiles
+        run: make setup
