@@ -29,7 +29,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install required packages
-        run: apk add git sudo curl file make
+        run: apk add git sudo curl file make bash
       - name: Install dotfiles
         run: make setup
   arch:
