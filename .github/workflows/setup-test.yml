@@ -18,7 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install required packages
-        run: yum install -y git sudo curl file make
+        run: yum update && yum install -y git sudo curl file make
       - name: Install dotfiles
         run: make setup
   alpine:
