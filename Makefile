@@ -9,3 +9,5 @@ dc.bash:
 setup:
 	./scripts/install.sh
 	./scripts/set-link.sh
+clean:
+	./scripts/clean-link.sh
