@@ -48,4 +48,4 @@ jobs:
       - name: Install ShellCheck
         run: apt-get update && apt-get install -y shellcheck
       - name: Run ShellCheck
-        run: shellcheck ./setup.sh ./scripts/**/*.sh
+        run: shellcheck -x ./setup.sh ./scripts/**/*.sh
