@@ -1,6 +1,6 @@
 ## 関連Issue
 
-- issue#
+- resolve #
 
 ## 変更点
 
