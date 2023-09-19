@@ -40,3 +40,12 @@ jobs:
         run: brew update && brew install git curl file make
       - name: Install dotfiles
         run: make setup
+  lint:
+    runs-on: ubuntu-latest
+    container: ubuntu:latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install ShellCheck
+        run: apt-get update && apt-get install -y shellcheck
+      - name: Run ShellCheck
+        run: shellcheck ./setup.sh ./scripts/**/*.sh
