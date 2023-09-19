@@ -18,16 +18,16 @@ Comming soon...
 
 1. Download
 
-```shell
-git clone https://github.com/kumapolar15/dotfiles.git
-cd dotfiles
-```
+   ```shell
+   git clone https://github.com/kumapolar15/dotfiles.git
+   cd dotfiles
+   ```
 
 2. Setup
 
-```shell
-make setup
-```
+   ```shell
+   make setup
+   ```
 
 3. Enjoy!
 
