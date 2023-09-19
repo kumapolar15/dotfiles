@@ -1,7 +1,7 @@
 #!/bin/bash
 
 get_os_bit() {
-  echo $(uname -m);
+  uname -m;
 }
 
 get_os_name() {
