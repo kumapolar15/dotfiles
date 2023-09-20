@@ -65,7 +65,7 @@ package_install() {
       pkgs+=("$pkg")
     fi
   done
-  if [ ! "${pkgs[@]}" = '' ]; then
+  if [ ! "${pkgs[*]}" = '' ]; then
     if [ "$os_name" = "MacOS" ]; then
       brew update
       brew install "${pkgs[@]}"
