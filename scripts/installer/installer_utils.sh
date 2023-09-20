@@ -46,26 +46,43 @@ get_linux_distribution() {
   echo ${distri_name}
 }
 
+package_exist() {
+  cmd="$1"
+  if type "$cmd" > /dev/null 2>&1; then
+    echo "do exist!"
+  else
+    echo "Not exist!"
+  fi
+}
+
 package_install() {
   os_name=$(get_os_name)
   args=("$@")
-  if [ "$os_name" = "MacOS" ]; then
-    brew update
-    brew install "${args[*]}"
-  fi
-  if [ "$os_name" = "Linux" ]; then
-    linux_distribution=$(get_linux_distribution)
-    if [ "$linux_distribution" = "ubuntu" ] || [ "$linux_distribution" = "debian" ]; then
-      sudo apt-get update
-      sudo apt-get install -y "${args[*]}"
-    elif [ "$linux_distribution" = "oracle" ] || [ "$linux_distribution" = "redhat" ]; then
-      sudo yum update
-      sudo yum install -y "${args[*]}"
-    elif [ "$linux_distribution" = "arch" ]; then
-      sudo pacman -Syu --noconfirm
-      sudo pacman -S --noconfirm "${args[*]}"
-    elif [ "$linux_distribution" = "alpine" ]; then
-      sudo apk add "${args[*]}"
+  pkgs=()
+  for pkg in "${args[@]}"
+  do
+    if [ "$(package_exist "$pkg")" = "Not exist!" ]; then
+      pkgs+=("$pkg")
+    fi
+  done
+  if [ ! "${pkgs[*]}" = '' ]; then
+    if [ "$os_name" = "MacOS" ]; then
+      brew update
+      brew install "${pkgs[@]}"
+    elif [ "$os_name" = "Linux" ]; then
+      linux_distribution=$(get_linux_distribution)
+      if [ "$linux_distribution" = "ubuntu" ] || [ "$linux_distribution" = "debian" ]; then
+        sudo apt-get update
+        sudo apt-get install -y "${pkgs[@]}"
+      elif [ "$linux_distribution" = "oracle" ] || [ "$linux_distribution" = "redhat" ]; then
+        sudo yum update
+        sudo yum install -y "${pkgs[@]}"
+      elif [ "$linux_distribution" = "arch" ]; then
+        sudo pacman -Syu --noconfirm
+        sudo pacman -S --noconfirm "${pkgs[@]}"
+      elif [ "$linux_distribution" = "alpine" ]; then
+        sudo apk add "${pkgs[@]}"
+      fi
     fi
   fi
 }

@@ -4,3 +4,16 @@ services:
       context: .
       dockerfile: ./docker/ubuntu/Dockerfile
     tty: true
+    volumes:
+      - ./config:/home/user/dotfiles/config
+      - ./scripts:/home/user/dotfiles/scripts
+      - ./Makefile:/home/user/dotfiles/Makefile
+  alpine:
+    build:
+      context: .
+      dockerfile: ./docker/alpine/Dockerfile
+    tty: true
+    volumes:
+      - ./config:/home/user/dotfiles/config
+      - ./scripts:/home/user/dotfiles/scripts
+      - ./Makefile:/home/user/dotfiles/Makefile

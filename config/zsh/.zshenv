@@ -14,3 +14,15 @@ export ZRCDIR="$ZHOMEDIR/rc"
 export ZDATADIR="$XDG_DATA_HOME/zsh"
 export ZCACHEDIR="$XDG_CACHE_HOME/zsh"
 
+### Rust ###
+export RUST_BACKTRACE=1
+export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
+export CARGO_HOME="$XDG_DATA_HOME/cargo"
+
+### Starship ###
+export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
+export STARSHIP_CACHE="$XDG_CACHE_HOME/starship"
+
+### PATH ###
+export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
+export PATH="$CARGO_HOME/bin:$PATH"

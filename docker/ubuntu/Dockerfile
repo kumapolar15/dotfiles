@@ -12,12 +12,7 @@ ENV HOME="/home/$USERNAME"
 WORKDIR $HOME
 
 RUN mkdir ./dotfiles
-COPY ./config ./dotfiles/config
-COPY ./scripts ./dotfiles/scripts
-COPY ./Makefile ./dotfiles/Makefile
-RUN chmod -R +x ./dotfiles/scripts
 
 USER $USERNAME
-RUN cd ./dotfiles && make setup
 
 CMD ["/bin/zsh"]
