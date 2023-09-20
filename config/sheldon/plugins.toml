@@ -1,0 +1,23 @@
+shell = 'zsh'
+
+[plugins.zsh-defer]
+github = 'romkatv/zsh-defer'
+apply = ['source']
+
+[templates]
+defer = """{% for file in files %}
+zsh-defer source "{{ file }}"
+{% endfor %}"""
+
+[plugins.starship]
+inline = 'eval "$(starship init zsh)"'
+
+[plugins.dotfiles-sync]
+local = "~/.config/zsh/sync"
+use = ['*.zsh']
+apply = ['source']
+
+[plugins.dotfiles-defer]
+local = "~/.config/zsh/defer"
+use = ['*.zsh']
+apply = ['defer']
