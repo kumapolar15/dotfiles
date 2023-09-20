@@ -6,6 +6,8 @@ source "$(dirname "$0")/installer_utils.sh"
 
 if [ "$(get_os_name)" == "Linux" ] && [ "$(get_linux_distribution)" == "alpine" ]; then
   args=("curl" "alpine-sdk" "libressl-dev" "pkgconfig")
+elif [ "$(get_os_name)" == "Linux" ] && [ "$(get_linux_distribution)" == "arch" ]; then
+  args=("curl" "base-devel" "openssl" "pkg-config")
 else
   args=("curl" "build-essential" "libssl-dev" "pkg-config")
 fi
