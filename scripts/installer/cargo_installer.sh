@@ -8,6 +8,8 @@ if [ "$(get_os_name)" == "Linux" ] && [ "$(get_linux_distribution)" == "alpine" 
   args=("curl" "alpine-sdk" "libressl-dev" "pkgconfig")
 elif [ "$(get_os_name)" == "Linux" ] && [ "$(get_linux_distribution)" == "arch" ]; then
   args=("curl" "base-devel" "openssl" "pkg-config")
+elif [ "$(get_os_name)" == "MacOS" ]; then
+  args=("curl" "openssl" "pkg-config")
 else
   args=("curl" "build-essential" "libssl-dev" "pkg-config")
 fi
