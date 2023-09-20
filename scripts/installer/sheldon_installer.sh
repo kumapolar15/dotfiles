@@ -8,8 +8,12 @@ args=("curl")
 package_install "${args[@]}"
 
 if [ "$(package_exist sheldon)" = "Not exist!" ]; then
-  curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh \
-    | bash -s -- --repo rossmacarthur/sheldon --to ~/.local/bin
+  if [ "$(get_os_name)" = "MacOS" ]; then
+    brew install sheldon
+  else
+    curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh \
+      | bash -s -- --repo rossmacarthur/sheldon --to ~/.local/bin
+  fi
 fi
 
 sheldon lock
