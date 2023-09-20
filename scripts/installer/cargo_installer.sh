@@ -4,11 +4,11 @@ source "$(dirname "$0")/../common.sh"
 # shellcheck source=scripts/installer/installer_utils.sh
 source "$(dirname "$0")/installer_utils.sh"
 
-if [ "$(get_os_name)" == "Linux" ] && [ "$(get_linux_distribution)" == "alpine" ]; then
+if [ "$(get_os_name)" = "Linux" ] && [ "$(get_linux_distribution)" = "alpine" ]; then
   args=("curl" "alpine-sdk" "libressl-dev" "pkgconfig")
-elif [ "$(get_os_name)" == "Linux" ] && [ "$(get_linux_distribution)" == "arch" ]; then
+elif [ "$(get_os_name)" = "Linux" ] && [ "$(get_linux_distribution)" = "arch" ]; then
   args=("curl" "base-devel" "openssl" "pkg-config")
-elif [ "$(get_os_name)" == "MacOS" ]; then
+elif [ "$(get_os_name)" = "MacOS" ]; then
   args=("curl" "openssl" "pkg-config")
 else
   args=("curl" "build-essential" "libssl-dev" "pkg-config")
@@ -20,5 +20,7 @@ if [ "$(package_exist rustup)" = "Not exist!" ]; then
   source "$CARGO_HOME/env"
 fi
 
-rustup self update
+if [ ! "$(get_os_name)" = "MacOS" ]; then
+  rustup self update
+fi
 rustup update
