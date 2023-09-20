@@ -65,12 +65,11 @@ package_install() {
       pkgs+=("$pkg")
     fi
   done
-  if [ "$os_name" = "MacOS" ]; then
-    brew update
-    brew install ${pkgs[*]}
-  fi
   if [ ! "${pkgs[*]}" = '' ]; then
-    if [ "$os_name" = "Linux" ]; then
+    if [ "$os_name" = "MacOS" ]; then
+      brew update
+      brew install ${pkgs[*]}
+    elif [ "$os_name" = "Linux" ]; then
       linux_distribution=$(get_linux_distribution)
       if [ "$linux_distribution" = "ubuntu" ] || [ "$linux_distribution" = "debian" ]; then
         sudo apt-get update
