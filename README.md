@@ -43,28 +43,19 @@
 
 ## Contents
 
-- iceberg colorscheme
+- color scheme setting
 - zsh config
-- neovim config
+- NeoVim config
 - tmux config
-- modern unix cmd config
-  - bat
-  - delta
-  - exa
-  - fd
-  - fzf
-  - httpie
-  - procs
-  - ripgrep
-  - rtx
-- github cli config
+- Modern UNIX cmd config
+- GitHub CLI config
 - ghq config
 
-## ColorScheme
+## Color Scheme
 
-- [iceberg](https://github.com/cocopon/iceberg.vim/tree/master)
+- [Iceberg](https://github.com/cocopon/iceberg.vim/tree/master)
 
-## Zsh Setup
+## Zsh
 
 ### Prompt
 
@@ -91,3 +82,23 @@
 ## tmux
 
 - VimLike keybinding
+
+## Modern UNIX Commands
+
+- [bat](https://github.com/sharkdp/bat): alternative to cat.
+- [delta](https://github.com/dandavison/delta): alternative to diff.
+- [exa](https://github.com/ogham/exa): alternative to ls.
+- [fd](https://github.com/sharkdp/fd): alternative to find.
+- [fzf](https://github.com/junegunn/fzf): fuzzy finder.
+- [httpie cli](https://github.com/httpie/cli): alternative to cli.
+- [procs](https://github.com/dalance/procs): alternative to ps.
+- [ripgrep](https://github.com/BurntSushi/ripgrep): alternative to grep.
+- [rtx](https://github.com/jdx/rtx): alternative to asdf.
+
+## GitHub CLI
+
+- [GitHub CLI](https://github.com/cli/cli): GitHub on the command line.
+
+## ghq
+
+- [ghq](https://github.com/x-motemen/ghq): repository manager.
