@@ -27,3 +27,8 @@ if [ "$(package_exist ghq)" = 'Not exist!' ]; then
     package_install ghq
   fi
 fi
+
+if [ "$(package_exist ghq)" = 'Not exist!' ]; then
+  echo "Failed to install."
+  exit 1
+fi

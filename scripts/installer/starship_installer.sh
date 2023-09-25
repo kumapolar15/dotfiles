@@ -7,3 +7,8 @@ source "$(dirname "$0")/installer_utils.sh"
 if [ "$(package_exist starship)" = "Not exist!" ]; then
   curl --proto '=https' --tlsv1.2 -sSf https://starship.rs/install.sh | sh -s -- -b ~/.local/bin -y
 fi
+
+if [ "$(package_exist starship)" = 'Not exist!' ]; then
+  echo "Failed to install."
+  exit 1
+fi

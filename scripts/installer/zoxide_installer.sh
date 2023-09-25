@@ -7,3 +7,8 @@ source "$(dirname "$0")/installer_utils.sh"
 if [ "$(package_exist zoxide)" = "Not exist!" ]; then
   package_install zoxide
 fi
+
+if [ "$(package_exist zoxide)" = 'Not exist!' ]; then
+  echo "Failed to install."
+  exit 1
+fi

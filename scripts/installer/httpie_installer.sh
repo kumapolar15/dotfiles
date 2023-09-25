@@ -7,3 +7,8 @@ source "$(dirname "$0")/installer_utils.sh"
 if [ "$(package_exist http)" = "Not exist!" ]; then
   package_install httpie
 fi
+
+if [ "$(package_exist http)" = 'Not exist!' ]; then
+  echo "Failed to install."
+  exit 1
+fi

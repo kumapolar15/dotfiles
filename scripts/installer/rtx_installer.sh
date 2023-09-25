@@ -11,3 +11,8 @@ if [ "$(package_exist rtx)" = "Not exist!" ]; then
     curl https://rtx.pub/install.sh | sh
   fi
 fi
+
+if [ "$(package_exist rtx)" = 'Not exist!' ]; then
+  echo "Failed to install."
+  exit 1
+fi

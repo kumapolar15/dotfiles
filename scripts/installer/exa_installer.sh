@@ -7,3 +7,8 @@ source "$(dirname "$0")/installer_utils.sh"
 if [ "$(package_exist exa)" = 'Not exist!' ]; then
   package_install exa
 fi
+
+if [ "$(package_exist exa)" = 'Not exist!' ]; then
+  echo "Failed to install."
+  exit 1
+fi

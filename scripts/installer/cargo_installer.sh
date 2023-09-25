@@ -22,4 +22,10 @@ fi
 if [ ! "$(get_os_name)" = "MacOS" ]; then
   rustup self update
 fi
-rustup update
+
+if [ "$(package_exist rustup)" = 'Not exist!' ]; then
+  echo "Failed to install."
+  exit 1
+else
+  rustup update
+fi

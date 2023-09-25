@@ -23,3 +23,8 @@ if [ "$(package_exist gh)" = 'Not exist!' ]; then
     package_install github-cli
   fi
 fi
+
+if [ "$(package_exist gh)" = 'Not exist!' ]; then
+  echo "Failed to install."
+  exit 1
+fi

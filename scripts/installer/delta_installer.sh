@@ -35,3 +35,8 @@ if [ "$(package_exist delta)" = 'Not exist!' ]; then
     package_install git-delta
   fi
 fi
+
+if [ "$(package_exist delta)" = 'Not exist!' ]; then
+  echo "Failed to install."
+  exit 1
+fi

@@ -13,3 +13,8 @@ if [ "$(package_exist fd)" = 'Not exist!' ]; then
     package_install fd
   fi
 fi
+
+if [ "$(package_exist fd)" = 'Not exist!' ]; then
+  echo "Failed to install."
+  exit 1
+fi

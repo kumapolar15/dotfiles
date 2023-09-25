@@ -13,4 +13,9 @@ if [ "$(package_exist sheldon)" = "Not exist!" ]; then
   fi
 fi
 
-sheldon lock
+if [ "$(package_exist sheldon)" = 'Not exist!' ]; then
+  echo "Failed to install."
+  exit 1
+else
+  sheldon lock
+fi

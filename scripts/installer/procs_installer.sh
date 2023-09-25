@@ -25,3 +25,8 @@ if [ "$(package_exist procs)" = 'Not exist!' ]; then
     package_install procs
   fi
 fi
+
+if [ "$(package_exist procs)" = 'Not exist!' ]; then
+  echo "Failed to install."
+  exit 1
+fi
