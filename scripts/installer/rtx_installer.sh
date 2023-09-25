@@ -14,7 +14,9 @@ if [ "$(package_exist rtx)" = "Not exist!" ]; then
   fi
 fi
 
-if [ "$(package_exist "$(XDG_DATA_HOME/rtx/bin/rtx)")" = 'Not exist!' ]; then
-  echo "Failed to install."
-  exit 1
+if [ "$(package_exist rtx)" = 'Not exist!' ]; then
+  if [ "$(package_exist "$XDG_DATA_HOME/rtx/bin/rtx")" = 'Not exist!' ]; then
+    echo "Failed to install."
+    exit 1
+  fi
 fi
