@@ -11,11 +11,10 @@ if [ "$(package_exist rtx)" = "Not exist!" ]; then
     package_install rtx
   else
     curl https://rtx.pub/install.sh | sh
-    export PATH="$XDG_DATA_HOME/rtx/bin/rtx:$PATH"
   fi
 fi
 
-if [ "$(package_exist rtx)" = 'Not exist!' ]; then
+if [ "$(package_exist "$(XDG_DATA_HOME/rtx/bin/rtx)")" = 'Not exist!' ]; then
   echo "Failed to install."
   exit 1
 fi
