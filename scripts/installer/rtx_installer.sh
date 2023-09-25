@@ -9,13 +9,9 @@ if [ "$(package_exist rtx)" = "Not exist!" ]; then
     package_install rtx
   elif [ "$(get_os_name)" = "Linux" ] && [ "$(get_linux_distribution)" = "alpine" ]; then
     package_install rtx
-  elif [ "$(get_os_name)" = "Linux" ] && [ "$(get_linux_distribution)" = "arch" ]; then
-    cd "$XDG_DATA_HOME"
-    git clone https://aur.archlinux.org/rtx.git
-    cd rtx
-    makepkg -si
   else
     curl https://rtx.pub/install.sh | sh
+    export PATH="$XDG_DATA_HOME/rtx/bin/rtx:$PATH"
   fi
 fi
 
