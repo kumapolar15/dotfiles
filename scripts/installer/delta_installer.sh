@@ -13,8 +13,9 @@ if [ "$(package_exist delta)" = 'Not exist!' ]; then
       package_install wget
     fi
     DELTA_VERSION=$(curl -s "https://api.github.com/repos/dandavison/delta/releases/latest" | grep -Po '"tag_name": "\K[0-9.]+')
-    sudo wget -qO /usr/local/bin/delta.tar.gz "https://github.com/dandavison/delta/releases/download/${DELTA_VERSION}/delta-${DELTA_VERSION}-x86_64-unknown-linux-gnu.tar.gz"
-    sudo tar -zxvf /usr/local/bin/delta.tar.gz
+    sudo wget -qO /tmp/delta.tar.gz "https://github.com/dandavison/delta/releases/download/${DELTA_VERSION}/delta-${DELTA_VERSION}-x86_64-unknown-linux-gnu.tar.gz"
+    sudo tar -zxvf /tmp/delta.tar.gz
+    sudo mv /tmp/delta/delta /usr/local/bin/delta
     sudo chmod a+x /usr/local/bin/delta
   elif [ "$(get_os_name)" = "Linux" ] && [ "$(get_linux_distribution)" = "debian" ]; then
     if [ "$(package_exist wget)" = 'Not exist!' ]; then
@@ -24,8 +25,9 @@ if [ "$(package_exist delta)" = 'Not exist!' ]; then
       package_install wget
     fi
     DELTA_VERSION=$(curl -s "https://api.github.com/repos/dandavison/delta/releases/latest" | grep -Po '"tag_name": "v\K[0-9.]+')
-    sudo wget -qO /usr/local/bin/delta.tar.gz "https://github.com/dandavison/delta/releases/download/${DELTA_VERSION}/delta-${DELTA_VERSION}-x86_64-unknown-linux-gnu.tar.gz"
-    sudo tar -zxvf /usr/local/bin/delta.tar.gz
+    sudo wget -qO /tmp/delta.tar.gz "https://github.com/dandavison/delta/releases/download/${DELTA_VERSION}/delta-${DELTA_VERSION}-x86_64-unknown-linux-gnu.tar.gz"
+    sudo tar -zxvf /tmp/delta.tar.gz
+    sudo mv /tmp/delta/delta /usr/local/bin/delta
     sudo chmod a+x /usr/local/bin/delta
   elif [ "$(get_os_name)" = "Linux" ] && [ "$(get_linux_distribution)" = "alpine" ]; then
     package_install delta
