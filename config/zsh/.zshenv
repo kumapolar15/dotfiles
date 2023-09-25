@@ -23,6 +23,9 @@ export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
 export STARSHIP_CACHE="$XDG_CACHE_HOME/starship"
 
+### bat ###
+export BAT_CONFIG_PATH="$XDG_CONFIG_HOME/bat/bat.conf"
+
 ### PATH ###
 export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 export PATH="$CARGO_HOME/bin:$PATH"
