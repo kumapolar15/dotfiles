@@ -5,25 +5,18 @@ source "$(dirname "$0")/../common.sh"
 source "$(dirname "$0")/installer_utils.sh"
 
 if [ "$(package_exist ghq)" = 'Not exist!' ]; then
-  if [ "$(get_os_name)" = "Linux" ] && [ "$(get_linux_distribution)" = "ubuntu" ]; then
-    echo "Sorry, but ghq_installer is not work on debian linux. please install ghq yourself."
-    exit 0
-  elif [ "$(get_os_name)" = "Linux" ] && [ "$(get_linux_distribution)" = "debian" ]; then
-    echo "Sorry, but ghq_installer is not work on debian linux. please install ghq yourself."
-    exit 0
-  elif [ "$(get_os_name)" = "Linux" ] && [ "$(get_linux_distribution)" = "oracle" ]; then
-    echo "Sorry, but ghq_installer is not work on redhat linux. please install ghq yourself."
-    exit 0
-  elif [ "$(get_os_name)" = "Linux" ] && [ "$(get_linux_distribution)" = "redhat" ]; then
-    echo "Sorry, but ghq_installer is not work on redhat linux. please install ghq yourself."
-    exit 0
-  elif [ "$(get_os_name)" = "Linux" ] && [ "$(get_linux_distribution)" = "alpine" ]; then
-    echo "Sorry, but ghq_installer is not work on alpine linux. please install ghq yourself."
-    exit 0
-  elif [ "$(get_os_name)" = "Linux" ] && [ "$(get_linux_distribution)" = "arch" ]; then
-    echo "Sorry, but ghq_installer is not work on arch linux. please install ghq yourself."
-    exit 0
-  else
+  if [ "$(get_os_name)" = "Linux" ]; then
+    if [ "$(get_os_bit)" = "x86_64" ]; then
+      if [ "$(package_exist unzip)" = "Not exist!" ]; then
+        package_install unzip
+      fi
+      GHQ_VERSION=$(curl -s "https://api.github.com/repos/x-motemen/ghq/releases/latest" | grep -o '"tag_name": "v[0-9.]\+"' | cut -f 4 -d '"')
+      sudo wget -qO /tmp/ghq.zip "https://github.com/x-motemen/ghq/releases/download/${GHQ_VERSION}/ghq_linux_amd64.zip"
+      sudo unzip -q /tmp/ghq.zip -d /tmp/ghq
+      sudo mv /tmp/ghq/ghq_linux_amd64/ghq /usr/local/bin
+      sudo chmod a+x /usr/local/bin/ghq
+    fi
+  elif [ "$(get_os_name)" = "MacOS"]; then
     package_install ghq
   fi
 fi
