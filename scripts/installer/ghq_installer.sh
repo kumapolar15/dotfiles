@@ -10,6 +10,9 @@ if [ "$(package_exist ghq)" = 'Not exist!' ]; then
       if [ "$(package_exist unzip)" = "Not exist!" ]; then
         package_install unzip
       fi
+      if [ "$(package_exist wget)" = "Not exist!" ]; then
+        package_install wget
+      fi
       GHQ_VERSION=$(curl -s "https://api.github.com/repos/x-motemen/ghq/releases/latest" | grep -o '"tag_name": "v[0-9.]\+"' | cut -f 4 -d '"')
       sudo wget -qO /tmp/ghq.zip "https://github.com/x-motemen/ghq/releases/download/${GHQ_VERSION}/ghq_linux_amd64.zip"
       sudo unzip -q /tmp/ghq.zip -d /tmp/ghq
