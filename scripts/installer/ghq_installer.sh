@@ -14,6 +14,9 @@ if [ "$(package_exist ghq)" = 'Not exist!' ]; then
   elif [ "$(get_os_name)" = "Linux" ] && [ "$(get_linux_distribution)" = "alpine" ]; then
     echo "Sorry, but ghq_installer is not work on alpine linux. please install ghq yourself."
     exit 0
+  elif [ "$(get_os_name)" = "Linux" ] && [ "$(get_linux_distribution)" = "arch" ]; then
+    echo "Sorry, but ghq_installer is not work on arch linux. please install ghq yourself."
+    exit 0
   else
     package_install ghq
   fi
