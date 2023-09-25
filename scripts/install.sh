@@ -1,4 +1,11 @@
 #!/bin/bash -xe
+# shellcheck source=scripts/installer/installer_utils.sh
+source "$(dirname "$0")/installer/installer_utils.sh"
+
+if [ "$(get_os_name)" == "Windows" ] || [ "$(get_os_name)" = "Linux" ] && [ "$(get_linux_distribution)" = "ubuntu" ]; then
+  echo "ERROR: This installer scripts is not supported on this operating system. interrupt installation..."
+  exit 0
+fi
 
 # install zsh
 "$(dirname "$0")/installer/zsh_installer.sh"
