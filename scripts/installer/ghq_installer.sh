@@ -5,10 +5,16 @@ source "$(dirname "$0")/../common.sh"
 source "$(dirname "$0")/installer_utils.sh"
 
 if [ "$(package_exist ghq)" = 'Not exist!' ]; then
-  if [ "$(get_os_name)" = "Linux" ] && [ "ubuntu debian" =~ "$(get_linux_distribution)" ]; then
+  if [ "$(get_os_name)" = "Linux" ] && [ "$(get_linux_distribution)" = "ubuntu" ]; then
     echo "Sorry, but ghq_installer is not work on debian linux. please install ghq yourself."
     exit 0
-  elif [ "$(get_os_name)" = "Linux" ] && [ "oracle redhat" =~ "$(get_linux_distribution)" ]; then
+  elif [ "$(get_os_name)" = "Linux" ] && [ "$(get_linux_distribution)" = "debian" ]; then
+    echo "Sorry, but ghq_installer is not work on debian linux. please install ghq yourself."
+    exit 0
+  elif [ "$(get_os_name)" = "Linux" ] && [ "$(get_linux_distribution)" = "oracle" ]; then
+    echo "Sorry, but ghq_installer is not work on redhat linux. please install ghq yourself."
+    exit 0
+  elif [ "$(get_os_name)" = "Linux" ] && [ "$(get_linux_distribution)" = "redhat" ]; then
     echo "Sorry, but ghq_installer is not work on redhat linux. please install ghq yourself."
     exit 0
   elif [ "$(get_os_name)" = "Linux" ] && [ "$(get_linux_distribution)" = "alpine" ]; then

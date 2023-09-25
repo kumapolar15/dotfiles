@@ -5,7 +5,9 @@ source "$(dirname "$0")/../common.sh"
 source "$(dirname "$0")/installer_utils.sh"
 
 if [ "$(package_exist fd)" = 'Not exist!' ]; then
-  if [ "$(get_os_name)" = "Linux" ] && [ "ubuntu debian" =~ "$(get_linux_distribution)" ]; then
+  if [ "$(get_os_name)" = "Linux" ] && [ "$(get_linux_distribution)" = "ubuntu" ]; then
+    package_install fd-find
+  elif [ "$(get_os_name)" = "Linux" ] && [ "$(get_linux_distribution)" = "debian" ]; then
     package_install fd-find
   else
     package_install fd
