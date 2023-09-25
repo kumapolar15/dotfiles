@@ -9,6 +9,10 @@ if [ "$(package_exist bat)" = 'Not exist!' ]; then
 fi
 
 if [ "$(package_exist bat)" = 'Not exist!' ]; then
-  echo "Failed to install."
-  exit 1
+  if [ "$(package_exist batcat)" = 'Not exist!' ]; then
+    echo "Failed to install."
+    exit 1
+  else
+    ln -s /usr/bin/batcat "$HOME/.local/bin/bat"
+  fi
 fi
