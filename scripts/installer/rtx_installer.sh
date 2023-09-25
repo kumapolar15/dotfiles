@@ -5,8 +5,15 @@ source "$(dirname "$0")/../common.sh"
 source "$(dirname "$0")/installer_utils.sh"
 
 if [ "$(package_exist rtx)" = "Not exist!" ]; then
-  if [ "$(get_os_name)" = "Linux" ] && [ "$(get_linux_distribution)" = "alpine" ]; then
+  if [ "$(get_os_name)" = "MacOS" ]; then
     package_install rtx
+  elif [ "$(get_os_name)" = "Linux" ] && [ "$(get_linux_distribution)" = "alpine" ]; then
+    package_install rtx
+  elif [ "$(get_os_name)" = "Linux" ] && [ "$(get_linux_distribution)" = "arch" ]; then
+    cd "$XDG_DATA_HOME"
+    git clone https://aur.archlinux.org/rtx.git
+    cd rtx
+    makepkg -si
   else
     curl https://rtx.pub/install.sh | sh
   fi
