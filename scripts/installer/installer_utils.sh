@@ -57,14 +57,7 @@ package_exist() {
 
 package_install() {
   os_name=$(get_os_name)
-  args=("$@")
-  pkgs=()
-  for pkg in "${args[@]}"
-  do
-    if [ "$(package_exist "$pkg")" = "Not exist!" ]; then
-      pkgs+=("$pkg")
-    fi
-  done
+  pkgs=("$@")
   if [ ! "${pkgs[*]}" = '' ]; then
     if [ "$os_name" = "MacOS" ]; then
       brew update

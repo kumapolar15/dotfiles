@@ -4,7 +4,9 @@
 
 ## Overview
 
-Comming soon...
+### Terminal
+
+![スクリーンショット 2023-09-26 003401](https://github.com/kumapolar15/dotfiles/assets/129534535/f4e9d253-d698-498e-88aa-aa0f85605970)
 
 ## Supported OS
 
@@ -29,12 +31,74 @@ Comming soon...
    make setup
    ```
 
-3. Enjoy!
+3. Restart shell
+
+   ```shell
+   source ~/.zshenv
+   source ~/.config/zsh/.zshrc
+   exec $SHELL
+   ```
+
+4. Enjoy!
 
 ## Contents
 
+- color scheme setting
 - zsh config
+- NeoVim config
+- tmux config
+- Modern UNIX cmd config
+- GitHub CLI config
+- ghq config
 
-## Zsh setup
+## Color Scheme
+
+- [Iceberg](https://github.com/cocopon/iceberg.vim/tree/master)
+
+## Zsh
+
+### Prompt
+
+- [Starship](https://github.com/starship/starship)
+
+### Plugin Manager
+
+- [sheldon](https://github.com/rossmacarthur/sheldon)
+
+### Zsh Plugins
+
+- nothing yet
+
+## NeoVim
+
+### Plugin Manager
 
 - origin
+
+### Plugins
+
+- nothing yet
+
+## tmux
+
+- VimLike keybinding
+
+## Modern UNIX Commands
+
+- [bat](https://github.com/sharkdp/bat): alternative to cat.
+- [delta](https://github.com/dandavison/delta): alternative to diff.
+- [exa](https://github.com/ogham/exa): alternative to ls.
+- [fd](https://github.com/sharkdp/fd): alternative to find.
+- [fzf](https://github.com/junegunn/fzf): fuzzy finder.
+- [httpie cli](https://github.com/httpie/cli): alternative to cli.
+- [procs](https://github.com/dalance/procs): alternative to ps.
+- [ripgrep](https://github.com/BurntSushi/ripgrep): alternative to grep.
+- [rtx](https://github.com/jdx/rtx): alternative to asdf.
+
+## GitHub CLI
+
+- [GitHub CLI](https://github.com/cli/cli): GitHub on the command line.
+
+## ghq
+
+- [ghq](https://github.com/x-motemen/ghq): repository manager.
