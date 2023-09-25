@@ -16,7 +16,7 @@ if [ "$(package_exist ghq)" = 'Not exist!' ]; then
       sudo mv /tmp/ghq/ghq_linux_amd64/ghq /usr/local/bin
       sudo chmod a+x /usr/local/bin/ghq
     fi
-  elif [ "$(get_os_name)" = "MacOS"]; then
+  elif [ "$(get_os_name)" = "MacOS" ]; then
     package_install ghq
   fi
 fi
