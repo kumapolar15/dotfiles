@@ -4,6 +4,6 @@ source "$(dirname "$0")/../common.sh"
 # shellcheck source=scripts/installer/installer_utils.sh
 source "$(dirname "$0")/installer_utils.sh"
 
-if [ "$(package_exist zsh)" = "Not exist!" ]; then
-  package_install zsh
+if [ "$(package_exist bat)" = 'Not exist!' ]; then
+  package_install bat
 fi
