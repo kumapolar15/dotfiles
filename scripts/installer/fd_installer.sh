@@ -15,6 +15,10 @@ if [ "$(package_exist fd)" = 'Not exist!' ]; then
 fi
 
 if [ "$(package_exist fd)" = 'Not exist!' ]; then
-  echo "Failed to install."
-  exit 1
+  if [ "$(package_exist fdfind)" = 'Not exist!' ]; then
+    echo "Failed to install."
+    exit 1
+  else
+    ln -s /usr/bin/fdfind "$HOME/.local/bin/fd"
+  fi
 fi
