@@ -1,0 +1,16 @@
+### direnv ###
+.envrc
+
+### MacOS ###
+.DS_Store
+._*
+
+### Vim ###
+.*.swp
+
+### Editor ###
+.vscode/*
+.idea/
+
+### asdf(rtx) ###
+.tool-versions/
