@@ -5,19 +5,29 @@ github = 'romkatv/zsh-defer'
 apply = ['source']
 
 [templates]
-defer = """{% for file in files %}
-zsh-defer source "{{ file }}"
-{% endfor %}"""
+defer = "{{ hooks | get: \"pre\" | nl }}{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}{{ hooks | get: \"post\" | nl }}"
 
-[plugins.starship]
-inline = 'eval "$(starship init zsh)"'
+[plugins.compinit]
+inline = 'autoload -Uz compinit && zsh-defer compinit'
+
+[plugins.zsh-autosuggestions]
+github = 'zsh-users/zsh-autosuggestions'
+apply = ['defer']
+
+[plugins.fast-syntax-highlighting]
+github = 'zdharma/fast-syntax-highlighting'
+apply = ['defer']
+
+[plugins.zsh-abbr]
+github = 'olets/zsh-abbr'
+apply = ['defer']
 
 [plugins.dotfiles-sync]
-local = "~/.config/zsh/sync"
+local = '~/.config/zsh/sync'
 use = ['*.zsh']
 apply = ['source']
 
 [plugins.dotfiles-defer]
-local = "~/.config/zsh/defer"
+local = '~/.config/zsh/defer'
 use = ['*.zsh']
 apply = ['defer']
