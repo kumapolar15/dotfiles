@@ -1,0 +1,18 @@
+### Local settings ###
+*.Local
+local.*
+!local.*.sample
+
+### Zsh cache ###
+*.zwc
+.zcomp*
+
+### Symlinks ###
+config/sheldon/sheldon
+config/gh/gh
+config/starship/starship
+config/zsh/zsh
+config/tmux/tmux
+config/git/git
+config/bat/bat
+config/nvim/nvim
