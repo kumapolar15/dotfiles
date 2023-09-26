@@ -22,7 +22,6 @@ vim.o.scrolloff = 10
 vim.wo.number = true
 vim.wo.relativenumber = false
 vim.wo.signcolumn = 'yes'
-vim.wo.cursorline = true
 vim.wo.wrap = true
 vim.bo.wrapmargin = 2
 vim.wo.breakindent = true
