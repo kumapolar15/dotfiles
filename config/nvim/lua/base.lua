@@ -17,7 +17,7 @@ vim.o.hidden = true
 
 -- workspace view
 vim.o.title = true
-vim.o.laststatus = 2
+vim.o.laststatus = 3
 vim.o.scrolloff = 10
 vim.wo.number = true
 vim.wo.relativenumber = false
