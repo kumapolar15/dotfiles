@@ -25,6 +25,7 @@ packer.startup(function(use)
       ts_update()
     end,
   }
+  use 'norcalli/nvim-colorizer.lua'
   use 'dstein64/vim-startuptime'
 end)
 
