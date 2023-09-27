@@ -25,6 +25,7 @@ packer.startup(function(use)
       ts_update()
     end,
   }
+  use 'lewis6991/gitsigns.nvim'
   use 'norcalli/nvim-colorizer.lua'
   use 'dstein64/vim-startuptime'
 end)
