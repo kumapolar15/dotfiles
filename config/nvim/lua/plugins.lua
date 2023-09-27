@@ -9,6 +9,7 @@ vim.cmd [[packadd packer.nvim]]
 packer.startup(function(use)
   use 'wbthomason/packer.nvim'
   use 'cocopon/iceberg.vim'
+  use 'nvim-tree/nvim-web-devicons'
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'nvim-tree/nvim-web-devicons', opt = true }
@@ -16,7 +17,7 @@ packer.startup(function(use)
   use {
     'akinsho/bufferline.nvim',
     tag = '*',
-    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    requires = { 'nvim-tree/nvim-web-devicons' },
   }
   use {
     'nvim-treesitter/nvim-treesitter',
