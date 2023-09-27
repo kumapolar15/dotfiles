@@ -27,6 +27,10 @@ packer.startup(function(use)
     end,
   }
   use 'lewis6991/gitsigns.nvim'
+  use {
+    'nvim-tree/nvim-tree.lua',
+    requires = { 'nvim-tree/nvim-web-devicons' },
+  }
   use 'norcalli/nvim-colorizer.lua'
   use 'dstein64/vim-startuptime'
 end)

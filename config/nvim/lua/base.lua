@@ -93,3 +93,7 @@ vim.api.nvim_create_autocmd('insertLeave', {
     pattern = '*',
     command = 'set nopaste'
 })
+
+-- global value
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
