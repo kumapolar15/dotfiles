@@ -13,6 +13,7 @@ packer.startup(function(use)
     'nvim-lualine/lualine.nvim',
     requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   }
+  use 'dstein64/vim-startuptime'
 end)
 
 -- compile plugins
