@@ -31,6 +31,12 @@ packer.startup(function(use)
     'nvim-tree/nvim-tree.lua',
     requires = { 'nvim-tree/nvim-web-devicons' },
   }
+  use 'nvim-lua/plenary.nvim'
+  use {
+    'nvim-telescope/telescope.nvim',
+    tag = '0.1.3',
+    requires = { 'nvim-lua/plenary.nvim' }
+  }
   use 'norcalli/nvim-colorizer.lua'
   use 'dstein64/vim-startuptime'
 end)
