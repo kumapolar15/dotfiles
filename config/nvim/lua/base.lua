@@ -1,10 +1,12 @@
 -- encoding
 vim.o.encoding = 'utf-8'
 vim.scriptencoding = 'utf-8'
+vim.bo.fileencoding = 'utf-8'
 vim.go.fileencoding = 'utf-8'
 
 -- file
 vim.o.wildignore = '*/node_modules/*,*/vendor/*'
+vim.bo.autoread = true
 vim.go.autoread = true
 
 -- buckup
@@ -19,13 +21,14 @@ vim.o.hidden = true
 vim.o.title = true
 vim.o.laststatus = 3
 vim.o.scrolloff = 10
-vim.go.number = true
-vim.go.relativenumber = false
-vim.go.signcolumn = 'yes'
-vim.go.wrap = true
+vim.wo.number = true
+vim.wo.relativenumber = false
+vim.wo.signcolumn = 'yes'
+vim.wo.wrap = true
+vim.bo.wrapmargin = 2
 vim.go.wrapmargin = 2
-vim.go.breakindent = true
-vim.go.list = true
+vim.wo.breakindent = true
+vim.wo.list = true
 vim.o.listchars = "tab:▸-"
 
 -- edit
@@ -47,13 +50,18 @@ vim.o.shellcmdflag = '-c'
 
 -- indent
 vim.o.smarttab = true
+vim.bo.autoindent = true
 vim.go.autoindent = true
+vim.bo.smartindent = true
 vim.go.smartindent = true
+vim.bo.expandtab = true
 vim.go.expandtab = true
+vim.bo.tabstop = 4
 vim.go.tabstop = 4
+vim.bo.softtabstop = -1
 vim.go.softtabstop = -1
-vim.go.shiftwidth = 0
 vim.bo.shiftwidth = 0
+vim.go.shiftwidth = 0
 vim.api.nvim_create_augroup('fileTypeIndent', {})
 vim.api.nvim_create_autocmd({'BufNewFile', 'BufRead'}, {
   group = 'fileTypeIndent',

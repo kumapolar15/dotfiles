@@ -1,7 +1,6 @@
 local status, cmp = pcall(require, 'cmp')
 if (not status) then return end
-local status, lspkind = pcall(require, 'lspkind')
-if (not status) then return end
+local lspkind = require 'lspkind'
 
 cmp.setup({
   snippet = {
@@ -20,7 +19,10 @@ cmp.setup({
     ['<C-n>'] = cmp.mapping.select_next_item(),
     ['<C-l>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.abort(),
-    ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+    ['<CR>'] = cmp.mapping.confirm({
+      behavior = cmp.ConfirmBehavior.Replace,
+      select = true,
+    }),
   }),
   experimental = {
     ghost_text = false,

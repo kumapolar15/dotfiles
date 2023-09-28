@@ -47,6 +47,10 @@ packer.startup(function(use)
   use 'hrsh7th/vim-vsnip'
   use 'hrsh7th/cmp-vsnip'
   use 'onsails/lspkind.nvim'
+  use {
+    'nvimdev/lspsaga.nvim',
+    requires = { 'neovim/nvim-lspconfig' },
+  }
   use 'windwp/nvim-autopairs'
   use 'klen/nvim-config-local'
   use 'norcalli/nvim-colorizer.lua'
