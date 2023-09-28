@@ -5,7 +5,11 @@ source "$(dirname "$0")/../common.sh"
 source "$(dirname "$0")/installer_utils.sh"
 
 if [ "$(package_exist nvim)" = 'Not exist!' ]; then
-  package_install neovim neovim-doc
+  if [ "$(get_os_name)" = "Linux" ] && [ "$(get_linux_distribution)" = "alpine" ]; then
+    package_install neovim neovim-doc
+  else
+    package_install neovim
+  fi
 fi
 
 if [ "$(package_exist nvim)" = 'Not exist!' ]; then
