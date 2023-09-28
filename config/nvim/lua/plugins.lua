@@ -37,6 +37,16 @@ packer.startup(function(use)
     tag = '0.1.3',
     requires = { 'nvim-lua/plenary.nvim' }
   }
+  use 'williamboman/mason.nvim'
+  use 'williamboman/mason-lspconfig.nvim'
+  use 'neovim/nvim-lspconfig'
+  use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/vim-vsnip'
+  use 'hrsh7th/cmp-vsnip'
+  use 'onsails/lspkind.nvim'
   use 'windwp/nvim-autopairs'
   use 'klen/nvim-config-local'
   use 'norcalli/nvim-colorizer.lua'
