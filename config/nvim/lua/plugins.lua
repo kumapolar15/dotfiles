@@ -51,6 +51,7 @@ packer.startup(function(use)
     'nvimdev/lspsaga.nvim',
     requires = { 'neovim/nvim-lspconfig' },
   }
+  use 'j-hui/fidget.nvim'
   use 'windwp/nvim-autopairs'
   use 'klen/nvim-config-local'
   use 'norcalli/nvim-colorizer.lua'
