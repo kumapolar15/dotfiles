@@ -37,6 +37,7 @@ packer.startup(function(use)
     tag = '0.1.3',
     requires = { 'nvim-lua/plenary.nvim' }
   }
+  use 'windwp/nvim-autopairs'
   use 'klen/nvim-config-local'
   use 'norcalli/nvim-colorizer.lua'
   use 'dstein64/vim-startuptime'
