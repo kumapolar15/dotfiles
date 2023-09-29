@@ -73,11 +73,29 @@
 
 ### Plugin Manager
 
-- origin
+- [packer](https://github.com/wbthomason/packer.nvim)
 
 ### Plugins
 
-- nothing yet
+- [iceberg](): color schime
+- [nvim-web-devicons](): icons
+- [lualine.nvim](): status line
+- [bufferline.nvim](): buffer tab
+- [nvim-treesitter](): syntax highlight
+- [gitsigns.nvim](): git status
+- [nvim-tree.lua](): file explorer
+- [telescope.nvim](): fuzzy finder
+- [mason.nvim](): LSP server manager
+- [mason-lspconfig.nvim](): bridge mason with mason-lspconfig
+- [nvim-lspconfig](): LSP setting
+- [nvim-cmp](): completions
+- [lspsaga.nvim](): LSP UI
+- [null-ls](): linter
+- [fidget.nvim](): LSP status
+- [nvim-autopairs](): autopairs
+- [nvim-config-local](): local setting
+- [nvim-colorizer.lua](): color viewer
+- [vim-startuptime](): measure performance
 
 ## tmux
 
