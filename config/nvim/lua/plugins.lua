@@ -8,7 +8,10 @@ vim.cmd [[packadd packer.nvim]]
 
 packer.startup(function(use)
   use 'wbthomason/packer.nvim'
-  use 'cocopon/iceberg.vim'
+  use {
+    'cocopon/iceberg.vim',
+    config = function() vim.cmd([[colorscheme iceberg]]) end,
+  }
   use 'nvim-tree/nvim-web-devicons'
   use {
     'nvim-lualine/lualine.nvim',

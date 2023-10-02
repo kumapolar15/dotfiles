@@ -17,4 +17,3 @@ vim.api.nvim_create_autocmd( 'Colorscheme', {
     vim.api.nvim_set_hl(0, 'SignColumn', {ctermbg=none})
   end,
 })
-vim.cmd[[colorscheme iceberg]]
