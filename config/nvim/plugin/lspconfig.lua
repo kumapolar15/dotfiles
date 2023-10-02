@@ -3,7 +3,7 @@ local status, nvim_lsp = pcall(require, 'lspconfig')
 local on_attach = function(client, bufnr)
   local set = vim.keymap.set
   local s, lspsaga = pcall(require, 'lspsaga')
-  if (s) then
+  if (not s) then
     set('n', 'gr', '<cmd>Lspsaga finder<CR>')
     set('n', 'gd', '<cmd>Lspsaga peek_definition<CR>')
     set('n', 'K', '<cmd>Lspsaga hover_doc<CR>')
@@ -74,7 +74,7 @@ mason_lsp.setup({
   ensure_installed = {
     'lua_ls',
     'intelephense',
-    'tyserver',
+    'tsserver',
   },
   automatic_installation = false,
   handlers = nil,
