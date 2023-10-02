@@ -12,6 +12,10 @@ if [ "$(package_exist nvim)" = 'Not exist!' ]; then
   fi
 fi
 
+if [ -e "$HOME/.local/share/nvim/site/pack/packer/start/packer.nvim" ]; then
+  git clone --depth 1 https://github.com/wbthomason/packer.nvim "$HOME/.local/share/nvim/site/pack/packer/start/packer.nvim"
+fi
+
 if [ "$(package_exist nvim)" = 'Not exist!' ]; then
   echo "Failed to install."
   exit 1
