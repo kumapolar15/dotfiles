@@ -6,7 +6,9 @@
 
 ### Terminal
 
-![スクリーンショット 2023-09-26 184512](https://github.com/kumapolar15/dotfiles/assets/129534535/b4c9d02c-f757-46c9-ae04-caee1a5c2ec1)
+![スクリーンショット 2023-10-04 000404](https://github.com/kumapolar15/dotfiles/assets/129534535/a62373c7-be02-4b77-9b22-ca3f67e5a742)
+
+![スクリーンショット 2023-10-04 000639](https://github.com/kumapolar15/dotfiles/assets/129534535/eb19fc2b-a580-4f41-b295-a12441cb00d6)
 
 ## Supported OS
 
