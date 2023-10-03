@@ -6,7 +6,7 @@
 
 ### Terminal
 
-![スクリーンショット 2023-09-26 003401](https://github.com/kumapolar15/dotfiles/assets/129534535/f4e9d253-d698-498e-88aa-aa0f85605970)
+![スクリーンショット 2023-09-26 184512](https://github.com/kumapolar15/dotfiles/assets/129534535/b4c9d02c-f757-46c9-ae04-caee1a5c2ec1)
 
 ## Supported OS
 
@@ -34,8 +34,6 @@
 3. Restart shell
 
    ```shell
-   source ~/.zshenv
-   source ~/.config/zsh/.zshrc
    exec $SHELL
    ```
 
@@ -67,17 +65,37 @@
 
 ### Zsh Plugins
 
-- nothing yet
+- [zsh-auto-suggestions](https://github.com/zsh-users/zsh-autosuggestions): basic completions.
+- [fast-syntax-highlighting](https://github.com/zdharma-continuum/fast-syntax-highlighting): syntax highlight.
+- [zsh-abbr](https://github.com/olets/zsh-abbr): auto-expanding abbreviations.
 
 ## NeoVim
 
 ### Plugin Manager
 
-- origin
+- [packer](https://github.com/wbthomason/packer.nvim)
 
 ### Plugins
 
-- nothing yet
+- [iceberg](): color schime
+- [nvim-web-devicons](): icons
+- [lualine.nvim](): status line
+- [bufferline.nvim](): buffer tab
+- [nvim-treesitter](): syntax highlight
+- [gitsigns.nvim](): git status
+- [nvim-tree.lua](): file explorer
+- [telescope.nvim](): fuzzy finder
+- [mason.nvim](): LSP server manager
+- [mason-lspconfig.nvim](): bridge mason with mason-lspconfig
+- [nvim-lspconfig](): LSP setting
+- [nvim-cmp](): completions
+- [lspsaga.nvim](): LSP UI
+- [null-ls](): linter
+- [fidget.nvim](): LSP status
+- [nvim-autopairs](): autopairs
+- [nvim-config-local](): local setting
+- [nvim-colorizer.lua](): color viewer
+- [vim-startuptime](): measure performance
 
 ## tmux
 
@@ -94,6 +112,7 @@
 - [procs](https://github.com/dalance/procs): alternative to ps.
 - [ripgrep](https://github.com/BurntSushi/ripgrep): alternative to grep.
 - [rtx](https://github.com/jdx/rtx): alternative to asdf.
+- [zoxide](https://github.com/ajeetdsouza/zoxide): alternative to cd.
 
 ## GitHub CLI
 
