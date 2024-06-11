@@ -37,3 +37,7 @@ source "$starship_cache"
 unset starship_cache starship_toml
 
 zprof
+
+if [ -e "$HOME/.zshrc.local" ]; then
+    source ~/.zshrc.local
+fi
