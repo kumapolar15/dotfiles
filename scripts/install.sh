@@ -22,7 +22,7 @@ fi
 # install modern unix command
 "$(dirname "$0")/installer/bat_installer.sh"
 "$(dirname "$0")/installer/fd_installer.sh"
-"$(dirname "$0")/installer/exa_installer.sh"
+"$(dirname "$0")/installer/eza_installer.sh"
 "$(dirname "$0")/installer/procs_installer.sh"
 "$(dirname "$0")/installer/ripgrep_installer.sh"
 "$(dirname "$0")/installer/delta_installer.sh"
@@ -33,7 +33,7 @@ fi
 "$(dirname "$0")/installer/fzf_installer.sh"
 
 # install runtime manager
-"$(dirname "$0")/installer/rtx_installer.sh"
+# "$(dirname "$0")/installer/rtx_installer.sh"
 
 # install github cli
 "$(dirname "$0")/installer/github_cli_installer.sh"
