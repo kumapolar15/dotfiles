@@ -22,7 +22,7 @@ fi
 # install modern unix command
 "$(dirname "$0")/installer/bat_installer.sh"
 "$(dirname "$0")/installer/fd_installer.sh"
-"$(dirname "$0")/installer/exa_installer.sh"
+"$(dirname "$0")/installer/eza_installer.sh"
 "$(dirname "$0")/installer/procs_installer.sh"
 "$(dirname "$0")/installer/ripgrep_installer.sh"
 "$(dirname "$0")/installer/delta_installer.sh"
