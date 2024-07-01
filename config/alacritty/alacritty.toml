@@ -1,0 +1,116 @@
+[window]
+opacity = 1.00
+
+  [window.dimensions]
+  columns = 220
+  lines = 75
+
+  [window.padding]
+  x = 8
+  y = 4
+
+[scrolling]
+history = 10_000
+multiplier = 3
+
+[font]
+size = 14
+
+  [font.normal]
+  family = "HackGen Console NF"
+  style = "Regular"
+
+  [font.bold]
+  family = "HackGen Console NF"
+  style = "Bold"
+
+	[font.offset]
+	x = 0
+	y = 0
+
+	[font.glyph_offset]
+	x = 0
+	y = 0
+
+[shell]
+program = "/usr/local/bin/zsh"
+args = [ '-l' ]
+
+[[keyboard.bindings]]
+key = "Comma"
+mods = "Command"
+
+  [keyboard.bindings.command]
+  program = "sh"
+  args = [ "-c", "open ~/.config/alacritty/alacritty.yml" ]
+
+[[keyboard.bindings]]
+key = "N"
+mods = "Command"
+action = "SpawnNewInstance"
+
+[[keyboard.bindings]]
+key = "Space"
+mods = "Alt"
+chars = " "
+
+[[keyboard.bindings]]
+key = "Back"
+mods = "Super"
+chars = "\u0015"
+
+[[keyboard.bindings]]
+key = "Left"
+mods = "Alt"
+chars = "\u001bb"
+
+[[keyboard.bindings]]
+key = "Right"
+mods = "Alt"
+chars = "\u001bf"
+
+[[keyboard.bindings]]
+key = "Left"
+mods = "Command"
+chars = "\u001bOH"
+mode = "AppCursor"
+
+[[keyboard.bindings]]
+key = "Right"
+mods = "Command"
+chars = "\u001bOF"
+mode = "AppCursor"
+
+[[keyboard.bindings]]
+key = "Q"
+mods = "Control"
+chars = "\u0011"
+
+[colors.primary]
+background = "#161821"
+foreground = "#C6C8D1"
+
+[colors.cursor]
+text = "#fffefe"
+cursor = "#C6C8D1"
+
+[colors.normal]
+black = "#1e2132"
+red = "#e27878"
+green = "#b4be82"
+yellow = "#e2a478"
+blue = "#84a0c6"
+magenta = "#a093c7"
+cyan = "#89b8c2"
+white = "#c6c8d1"
+
+[colors.bright]
+black = "#6b7089"
+red = "#e98989"
+green = "#c0ca8e"
+yellow = "#e9b189"
+blue = "#91acd1"
+magenta = "#ada0d3"
+cyan = "#95c4ce"
+white = "#d2d4de"
+
