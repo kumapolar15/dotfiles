@@ -14,4 +14,4 @@
 .nvim/
 
 ### asdf(rtx) ###
-.tool-versions/
+.tool-versions

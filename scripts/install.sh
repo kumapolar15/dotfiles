@@ -33,7 +33,7 @@ fi
 "$(dirname "$0")/installer/fzf_installer.sh"
 
 # install runtime manager
-"$(dirname "$0")/installer/rtx_installer.sh"
+# "$(dirname "$0")/installer/rtx_installer.sh"
 
 # install github cli
 "$(dirname "$0")/installer/github_cli_installer.sh"
