@@ -33,7 +33,7 @@ size = 14
 	y = 0
 
 [shell]
-program = "/usr/local/bin/zsh"
+program = "/bin/zsh"
 args = [ '-l' ]
 
 [[keyboard.bindings]]
