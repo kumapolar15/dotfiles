@@ -15,3 +15,6 @@
 
 ### asdf(rtx) ###
 .tool-versions
+
+### phpactor ###
+.phpactor.json
