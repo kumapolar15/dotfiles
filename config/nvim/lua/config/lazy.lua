@@ -15,6 +15,8 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.coding.copilot" },
     -- import extras copilot-chat
     { import = "lazyvim.plugins.extras.coding.copilot-chat" },
+    -- import extras language php
+    { import = "lazyvim.plugins.extras.lang.php" },
     -- import/override with your plugins
     { import = "plugins" },
   },
