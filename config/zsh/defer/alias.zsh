@@ -25,3 +25,5 @@ alias ps='procs'
 alias ls='eza --color=auto --icons'
 alias ll='eza -l --color=auto --icons'
 alias la='eza -la --color=auto --icons'
+alias arm="exec arch -arch arm64e /bin/zsh --login"
+alias x64="exec arch -arch x86_64 /bin/zsh --login"
