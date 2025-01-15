@@ -40,4 +40,17 @@ return {
       },
     },
   },
+  {
+    "mfussenegger/nvim-dap",
+    opts = function()
+      local dap = require("dap")
+      local path = require("mason-registry").get_package("php-debug-adapter"):get_install_path()
+      dap.adapters.php = {
+        type = "executable",
+        -- command = os.getenv("COPILOT_NODE_PATH"),
+        command = "/Users/kumashirokazeto/.local/share/mise/installs/node/20/bin/node",
+        args = { path .. "/extension/out/phpDebug.js" },
+      }
+    end,
+  },
 }
