@@ -11,12 +11,16 @@ require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+    -- import extras snacks picker
+    { import = "lazyvim.plugins.extras.editor.snacks_picker" },
     -- import extras copilot
-    { import = "lazyvim.plugins.extras.coding.copilot" },
+    { import = "lazyvim.plugins.extras.ai.copilot" },
     -- import extras copilot-chat
-    { import = "lazyvim.plugins.extras.coding.copilot-chat" },
+    { import = "lazyvim.plugins.extras.ai.copilot-chat" },
     -- import extras language php
     { import = "lazyvim.plugins.extras.lang.php" },
+    -- import extras language go
+    { import = "lazyvim.plugins.extras.lang.go" },
     -- import extras dap
     { import = "lazyvim.plugins.extras.dap.core" },
     -- import/override with your plugins

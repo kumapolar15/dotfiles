@@ -26,7 +26,7 @@ widget::ghq::source() {
 
 widget::ghq::select() {
   local root="$(ghq root)"
-  widget::ghq::source | fzf --exit-0 --preview="exa -lh ${(q)root}/{2}/{3}/{4} --color=always --icons" --preview-window="right:60%" | cut -d' ' -f2-
+  widget::ghq::source | fzf --exit-0 --preview="eza -lh ${(q)root}/{2}/{3}/{4} --color=always --icons" --preview-window="right:60%" | cut -d' ' -f2-
 }
 
 widget::ghq::dir() {
