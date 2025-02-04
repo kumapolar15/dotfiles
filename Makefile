@@ -8,6 +8,5 @@ dc.bash:
 	docker compose exec alpine zsh
 setup:
 	./scripts/set-link.sh
-	./scripts/install.sh
 clean:
 	./scripts/clean-link.sh
