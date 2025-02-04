@@ -1,9 +1,2 @@
-if vim.g.vscode then
-  require ('vscode')
-else
-  require('base')
-  require('highlight')
-  require('keymap')
-
-  require('plugins')
-end
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")

@@ -13,5 +13,9 @@
 .idea/
 .nvim/
 
-### asdf(rtx) ###
+### asdf(mise) ###
 .tool-versions
+.mise.toml
+
+### phpactor ###
+.phpactor.json
