@@ -5,5 +5,4 @@ if [ ! -e "$DOTFILES_REPO" ]; then
 fi
 
 cd "$DOTFILES_REPO/scripts"
-"$(dirname "$0")/install.sh"
 "$(dirname "$0")/set-link.sh"
