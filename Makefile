@@ -10,3 +10,5 @@ setup:
 	./scripts/set-link.sh
 clean:
 	./scripts/clean-link.sh
+install-alacritty-themes:
+	./scripts/install-alacritty-themes.sh

@@ -9,6 +9,9 @@ defer = """{% for file in files %}
 zsh-defer source "{{ file }}"
 {% endfor %}"""
 
+[plugins.bashcompinit]
+inline = 'autoload bashcompinit && zsh-defer bashcompinit'
+
 [plugins.compinit]
 inline = 'autoload -Uz compinit && zsh-defer compinit'
 
@@ -23,6 +26,9 @@ apply = ['defer']
 [plugins.zsh-abbr]
 github = 'olets/zsh-abbr'
 apply = ['defer']
+
+[plugins.aws_completion]
+inline = 'zsh-defer complete -C aws_completer aws'
 
 [plugins.dotfiles-sync]
 local = '~/.config/zsh/sync'
