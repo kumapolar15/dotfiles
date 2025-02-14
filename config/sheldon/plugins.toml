@@ -5,9 +5,9 @@ github = 'romkatv/zsh-defer'
 apply = ['source']
 
 [templates]
-defer = """{% for file in files %}
-zsh-defer source "{{ file }}"
-{% endfor %}"""
+defer = """{{ hooks?.pre | nl }}{% for file in files %}
+zsh-defer source \"{{ file }}\"\n
+{% endfor %}{{ hooks?.post | nl }}"""
 
 [plugins.bashcompinit]
 inline = 'autoload bashcompinit && zsh-defer bashcompinit'
@@ -20,12 +20,20 @@ github = 'zsh-users/zsh-autosuggestions'
 apply = ['defer']
 
 [plugins.fast-syntax-highlighting]
-github = 'zdharma/fast-syntax-highlighting'
+github = 'zdharma-continuum/fast-syntax-highlighting'
 apply = ['defer']
 
 [plugins.zsh-abbr]
 github = 'olets/zsh-abbr'
 apply = ['defer']
+
+[plugins.docker-completion]
+remote = "https://raw.githubusercontent.com/docker/cli/refs/heads/master/contrib/completion/zsh/_docker"
+apply = ["fpath"]
+
+[plugins.git-completion]
+remote = "https://raw.githubusercontent.com/git/git/refs/heads/master/contrib/completion/git-completion.bash"
+apply = ["defer"]
 
 [plugins.aws_completion]
 inline = 'zsh-defer complete -C aws_completer aws'

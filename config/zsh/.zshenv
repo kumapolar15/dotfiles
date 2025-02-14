@@ -38,8 +38,10 @@ path=(
 )
 export PATH
 fpath=(
-  "$ZDOTDIR/completions"(N-/)
   "$ZDOTDIR/completions.local"(N-/)
+  "$ZDOTDIR/completions"(N-/)
+  "/usr/local/share/zsh/site-functions"(N-/)
+  "/usr/share/zsh/site-functions/"(N-/)
   "${fpath[@]}"
 )
 export FPATH
