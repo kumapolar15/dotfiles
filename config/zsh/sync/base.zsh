@@ -12,19 +12,6 @@ export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --exclude .git --co
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS="--layout=reverse --border --exit-0 --ansi"
 
-### PATH ###
-path=(
-  "$HOME/.local/bin"(N-/)
-  "$CARGO_HOME/bin"(N-/)
-  "$XDG_CONFIG_HOME/scripts/bin"(N-/)
-  "${path[@]}"
-)
-
-fpath=(
-  "$XDG_DATA_HOME/zsh/completions"(N-/)
-  "$fpath[@]"
-)
-
 ### OPTION ###
 setopt AUTO_PUSHD
 setopt PUSHD_IGNORE_DUPS
