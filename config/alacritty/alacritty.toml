@@ -7,6 +7,7 @@ import = [
 TERM = "alacritty"
 
 [window]
+option_as_alt = "OnlyLeft"
 opacity = 1.00
 
   [window.dimensions]
