@@ -1,0 +1,15 @@
+services:
+  ubuntu:
+    build:
+      context: ./docker/ubuntu
+      dockerfile: Dockerfile
+      args:
+        - UID=${UID:-1000}
+        - GID=${GID:-1000}
+    user: "${UID:-1000}:${GID:-1000}"
+    tty: true
+    stdin_open: true
+    volumes:
+      - ./:/home/user/dotfiles
+    working_dir: /home/user/dotfiles
+    command: zsh
