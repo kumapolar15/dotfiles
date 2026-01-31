@@ -4,3 +4,12 @@ setup:
 .PHONY: clean
 clean:
 	/bin/bash ./scripts/clean-link.sh
+.PHONY: sh-lint
+sh-lint:
+	shellcheck ./scripts/*.sh -x ./scripts/common.sh
+.PHONY: sh-fmt-diff
+sh-fmt-diff:
+	find ./scripts -name "*.sh" -exec shfmt -d {} ";"
+.PHONY: sh-fmt-fix
+sh-fmt-fix:
+	find ./scripts -name "*.sh" -exec shfmt -w {} ";"
