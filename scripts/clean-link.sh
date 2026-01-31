@@ -1,10 +1,15 @@
-#!/bin/bash -xe
+#!/bin/bash
+set -euxC
+
 # shellcheck source=scripts/common.sh
 source "$(dirname "$0")/common.sh"
 
-cd "$(dirname "$0")/.."
-DOTFILES_DIR="$(pwd)"
-if [ -f "$HOME/.zshenv" ]; then
-    unlink "$HOME/.zshenv"
+if [[ -L "$HOME/.zshenv" ]]; then
+  unlink "$HOME/.zshenv"
 fi
-ls -l "$XDG_CONFIG_HOME" | grep "$DOTFILES_DIR" | awk '{print $9}' | xargs -I {} unlink "$XDG_CONFIG_HOME/"{}
+find "$XDG_CONFIG_HOME" -type l -maxdepth 1 | while read -r link; do
+  target="$(readlink "$link")"
+  if [[ "$target" == "$DOTFILES_REPO/"* ]]; then
+    unlink "$link"
+  fi
+done
