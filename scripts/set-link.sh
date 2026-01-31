@@ -9,6 +9,8 @@ function backup_existing() {
   target_path="$1"
   if [[ -e "$target_path" ]] && [[ ! -L "$target_path" ]]; then
     mv "$target_path" "$target_path.bak"
+  elif [[ -L "$target_path" ]]; then
+    unlink "$target_path"
   fi
 }
 function main() {
@@ -26,7 +28,8 @@ function main() {
       ln -sv "$DOTFILES_REPO/config-mac/$dir" "$XDG_CONFIG_HOME/$dir"
     done
   fi
-  ln -sbv --suffix=.bak "$XDG_CONFIG_HOME/zsh/.zshenv" "$HOME/.zshenv"
+  backup_existing "$HOME/.zshenv"
+  ln -sv "$XDG_CONFIG_HOME/zsh/.zshenv" "$HOME/.zshenv"
 }
 
 main
