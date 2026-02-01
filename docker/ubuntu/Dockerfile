@@ -12,8 +12,11 @@ ENV LANGUAGE ja_JP:ja
 ENV LC_ALL ja_JP.UTF-8
 
 # Install zsh, make, etc.
-RUN apt update && \
-    apt install -y zsh make sudo
+RUN apt-get update && \
+    apt-get install -y zsh make sudo curl
+
+# Install starship
+RUN curl -fsSL https://starship.rs/install.sh | bash -s -- -y
 
 RUN mkdir ./dotfiles
 

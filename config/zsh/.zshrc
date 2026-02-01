@@ -2,6 +2,9 @@ export HISTFILE="$XDG_STATE_HOME/zsh/history"
 if [ ! -d "${HISTFILE:h}" ]; then
     mkdir -p "${HISTFILE:h}"
 fi
+
+eval "$(starship init zsh)"
+
 autoload -Uz compinit
 _zcompdump="${XDG_CACHE_HOME}/zsh/zcompdump-${HOST}-${ZSH_VERSION}"
 if [ ! -d "${_zcompdump:h}" ]; then
