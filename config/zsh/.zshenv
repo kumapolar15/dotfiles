@@ -10,3 +10,11 @@ export XDG_STATE_HOME="${XDG_STATE_HOME:-$HOME/.local/state}"
 ### zsh ###
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 skip_global_compinit=1
+
+## ローカルの.zshenvが存在する場合は読み込む
+if [[ -f "$HOME/.zshenv.local" ]]; then
+  source "$HOME/.zshenv.local"
+fi
+if [[ -f "$XDG_CONFIG_HOME/zsh/.zshenv.local" ]]; then
+  source "$XDG_CONFIG_HOME/zsh/.zshenv.local"
+fi
