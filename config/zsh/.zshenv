@@ -15,6 +15,12 @@ skip_global_compinit=1
 export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
 export STARSHIP_CACHE="$XDG_CACHE_HOME/starship"
 
+### PATH ###
+fpath=(
+  "$XDG_DATA_HOME/zsh/site-functions"(N-/)
+  "${fpath[@]}"
+)
+
 ## ローカルの.zshenvが存在する場合は読み込む
 if [[ -f "$HOME/.zshenv.local" ]]; then
   source "$HOME/.zshenv.local"
