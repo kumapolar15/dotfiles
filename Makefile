@@ -4,6 +4,9 @@ setup:
 .PHONY: clean
 clean:
 	/bin/bash ./scripts/clean-link.sh
+.PHONY: setup-ubuntu
+setup-ubuntu: setup
+	/bin/bash ./scripts/for-ubuntu.sh
 .PHONY: sh-lint
 sh-lint:
 	shellcheck ./scripts/*.sh -x ./scripts/common.sh

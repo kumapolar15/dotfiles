@@ -21,6 +21,10 @@ export SHELDON_DATA_DIR="$XDG_DATA_HOME/sheldon"
 export SHELDON_CONFIG_FILE="$SHELDON_CONFIG_DIR/plugins.toml"
 
 ### PATH ###
+path=(
+  "$HOME/.local/bin"
+  "${path[@]}"
+)
 fpath=(
   "$XDG_DATA_HOME/zsh/site-functions"(N-/)
   "${fpath[@]}"
