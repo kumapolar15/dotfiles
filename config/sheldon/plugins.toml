@@ -1,0 +1,78 @@
+shell = 'zsh'
+
+[plugins.options]
+local = '~/.config/zsh/plugins'
+use = ['{{ name }}.zsh']
+apply = ['source']
+
+[plugins.prompt]
+local = '~/.config/zsh/plugins'
+use = ['{{ name }}.zsh']
+apply = ['source']
+
+[plugins.alias]
+local = '~/.config/zsh/plugins'
+use = ['{{ name }}.zsh']
+apply = ['source']
+
+[plugins.completion-settings]
+local = '~/.config/zsh/plugins'
+use = ['{{ name }}.zsh']
+apply = ['source']
+
+[plugins.hooks]
+local = '~/.config/zsh/plugins'
+use = ['{{ name }}.zsh']
+apply = ['source']
+
+[plugins.widgets]
+local = '~/.config/zsh/plugins'
+use = ['{{ name }}.zsh']
+apply = ['source']
+
+[plugins.key-bindings]
+local = '~/.config/zsh/plugins'
+use = ['{{ name }}.zsh']
+apply = ['source']
+
+[plugins.zsh-defer]
+github = 'romkatv/zsh-defer'
+apply = ['source']
+
+[templates]
+defer = """{{ hooks?.pre | nl }}{% for file in files %}
+zsh-defer source \"{{ file }}\"\n
+{% endfor %}{{ hooks?.post | nl }}"""
+
+# 2. 補完系
+[plugins.zsh-completions]
+github = 'zsh-users/zsh-completions'
+apply = ['defer']
+
+[plugins.docker-completion]
+remote = 'https://raw.githubusercontent.com/docker/cli/refs/heads/master/contrib/completion/zsh/_docker'
+apply = ['fpath']
+
+[plugins.compinit]
+local = '~/.config/zsh/plugins'
+use = ['{{ name }}.zsh']
+apply = ['defer']
+
+[plugins.zsh-autosuggestions]
+github = 'zsh-users/zsh-autosuggestions'
+use = ['{{ name }}.zsh']
+apply = ['defer']
+
+[plugins.zsh-abbr]
+github = 'olets/zsh-abbr'
+apply = ['defer']
+
+[plugins.alias-abbr]
+local = '~/.config/zsh/plugins'
+use = ['{{ name }}.zsh']
+apply = ['defer']
+
+# 3. UI補助系
+[plugins.fast-syntax-highlighting]
+github = 'zdharma-continuum/fast-syntax-highlighting'
+apply = ["defer"]
