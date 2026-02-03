@@ -13,10 +13,17 @@ ENV LC_ALL ja_JP.UTF-8
 
 # Install zsh, make, etc.
 RUN apt-get update && \
-    apt-get install -y zsh make sudo curl
+    apt-get install -y zsh make sudo curl git tmux fzf golang neovim fd-find bat eza ripgrep
 
 # Install starship
-RUN curl -fsSL https://starship.rs/install.sh | bash -s -- -y
+RUN curl -fsSL https://starship.rs/install.sh | sh -s -- -y
+
+# Install sheldon
+RUN curl --proto '=https' -fsSL https://rossmacarthur.github.io/install/crate.sh \
+    | bash -s -- -y --repo rossmacarthur/sheldon --to /usr/local/bin
+
+# Install ghq
+RUN go install github.com/x-motemen/ghq@latest
 
 RUN mkdir ./dotfiles
 
