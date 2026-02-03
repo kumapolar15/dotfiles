@@ -51,7 +51,7 @@ apply = ['defer']
 
 [plugins.docker-completion]
 remote = 'https://raw.githubusercontent.com/docker/cli/refs/heads/master/contrib/completion/zsh/_docker'
-apply = ['fpath']
+apply = ['fpath', 'defer']
 
 [plugins.compinit]
 local = '~/.config/zsh/plugins'
