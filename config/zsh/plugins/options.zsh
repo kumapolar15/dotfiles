@@ -10,6 +10,9 @@ export SAVEHIST=10000
 # less config
 export LESSCHARSET=utf-8
 
+# default editor
+export EDITOR="nvim"
+
 ### OPTION ###
 # Changing Directories
 setopt AUTO_PUSHD
