@@ -11,18 +11,28 @@ export SAVEHIST=10000
 export LESSCHARSET=utf-8
 
 ### OPTION ###
+# Changing Directories
 setopt AUTO_PUSHD
 setopt PUSHD_IGNORE_DUPS
-setopt GLOBDOTS
+
+# Completion
+setopt AUTO_MENU
+setopt NO_LIST_BEEP
+
+# Expansion and Globbing
+setopt EXTENDED_GLOB
+setopt GLOB_DOTS
+setopt MAGIC_EQUAL_SUBST
+
+# History
 setopt APPEND_HISTORY
 setopt EXTENDED_HISTORY
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE
 setopt HIST_REDUCE_BLANKS
 setopt HIST_SAVE_NO_DUPS
-setopt INTERACTIVE_COMMENTS
 setopt NO_SHARE_HISTORY
-setopt MAGIC_EQUAL_SUBST
-setopt PRINT_EIGHT_BIT
+
+# Input/Output
 setopt NO_FLOW_CONTROL
-setopt EXTENDED_GLOB
+#setopt PRINT_EIGHT_BIT
