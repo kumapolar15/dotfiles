@@ -12,6 +12,7 @@ export LESSCHARSET=utf-8
 
 # default editor
 export EDITOR="nvim"
+export VISUAL="nvim"
 
 ### OPTION ###
 # Changing Directories
