@@ -15,6 +15,11 @@ skip_global_compinit=1
 export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
 export STARSHIP_CACHE="$XDG_CACHE_HOME/starship"
 
+### SHELDON ###
+export SHELDON_CONFIG_DIR="$XDG_CONFIG_HOME/sheldon"
+export SHELDON_DATA_DIR="$XDG_DATA_HOME/sheldon"
+export SHELDON_CONFIG_FILE="$SHELDON_CONFIG_DIR/plugins.toml"
+
 ### PATH ###
 fpath=(
   "$XDG_DATA_HOME/zsh/site-functions"(N-/)
