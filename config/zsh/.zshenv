@@ -24,6 +24,11 @@ export SHELDON_CONFIG_FILE="$SHELDON_CONFIG_DIR/plugins.toml"
 export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --exclude .git --color=always'
 export FZF_DEFAULT_OPTS="--layout=reverse --border --exit-0 --ansi"
 
+### Bat ###
+export BAT_CONFIG_DIR="$XDG_CONFIG_HOME/bat"
+export BAT_CONFIG_PATH="$BAT_CONFIG_DIR/bat.conf"
+export BAT_PAGER="less -RFK"
+
 ### PATH ###
 path=(
   "$HOME/.local/bin"
