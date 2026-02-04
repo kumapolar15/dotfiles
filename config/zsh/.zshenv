@@ -20,6 +20,10 @@ export SHELDON_CONFIG_DIR="$XDG_CONFIG_HOME/sheldon"
 export SHELDON_DATA_DIR="$XDG_DATA_HOME/sheldon"
 export SHELDON_CONFIG_FILE="$SHELDON_CONFIG_DIR/plugins.toml"
 
+### FZF ###
+export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --exclude .git --color=always'
+export FZF_DEFAULT_OPTS="--layout=reverse --border --exit-0 --ansi"
+
 ### PATH ###
 path=(
   "$HOME/.local/bin"
