@@ -63,7 +63,7 @@ widget::ghq::session() {
 }
 
 function dir_select() {
-  fd --follow --hidden --exclude .git --color=always . | \
+  fd --follow --hidden --exclude .git --color=never . | \
   fzf --preview 'f() {
     if [ -d $1 ]; then
       ls -lh $1

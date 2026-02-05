@@ -22,7 +22,15 @@ export SHELDON_CONFIG_FILE="$SHELDON_CONFIG_DIR/plugins.toml"
 
 ### FZF ###
 export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --exclude .git --color=always'
-export FZF_DEFAULT_OPTS="--layout=reverse --border --exit-0 --ansi"
+export FZF_DEFAULT_OPTS="--exit-0 --ansi"
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+  --color=fg:#d0d0d0,fg+:#c6c8d1,bg:#121212,bg+:#1e2132
+  --color=hl:#84a0c6,hl+:#89b8c2,info:#b4b282,marker:#89b8c2
+  --color=prompt:#b4be82,spinner:#a093c7,pointer:#d2d4de,header:#a093c7
+  --color=border:#0f1117,label:#aeaeae,query:#c6c8d1
+  --border="block" --border-label="" --preview-window="border-block" --prompt="❯ "
+  --marker=">" --pointer=">" --separator="─" --scrollbar="|"
+  --layout="reverse"'
 
 ### Bat ###
 export BAT_CONFIG_DIR="$XDG_CONFIG_HOME/bat"
