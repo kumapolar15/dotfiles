@@ -23,7 +23,7 @@ RUN curl --proto '=https' -fsSL https://rossmacarthur.github.io/install/crate.sh
     | bash -s -- -y --repo rossmacarthur/sheldon --to /usr/local/bin
 
 # Install ghq
-RUN go install github.com/x-motemen/ghq@latest
+RUN GOBIN=/usr/local/bin go install github.com/x-motemen/ghq@latest
 
 RUN mkdir ./dotfiles
 
