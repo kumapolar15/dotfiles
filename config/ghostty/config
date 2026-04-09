@@ -5,6 +5,7 @@ theme = "Iceberg Dark"
 font-family = "HackGen Console NF"
 font-size = 13
 font-thicken = true
+font-thicken-strength = 32
 
 # For macOS
 macos-option-as-alt = true
