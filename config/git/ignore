@@ -1,0 +1,18 @@
+# vim: ft=gitignore
+### MacOS ###
+.DS_Store
+._*
+
+### Editors ###
+.*.swp
+.idea/
+.nvim/
+
+### Language Specific ###
+# Python
+__pycache__/
+*.py[cod]
+# Go
+*.out
+*.test
+
