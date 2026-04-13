@@ -1,3 +1,8 @@
+-- Set Global Variables
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
+
+-- Set Options
 local opt = vim.opt
 
 opt.autowrite = false -- Enable auto write
