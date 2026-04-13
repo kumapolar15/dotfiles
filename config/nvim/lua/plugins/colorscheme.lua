@@ -2,7 +2,7 @@ return {
 
   -- iceberg
   {
-    "cocopon/iceberg.vim",
+    "https://github.com/cocopon/iceberg.vim.git",
     lazy = false,
     priority = 1000,
     config = function()
