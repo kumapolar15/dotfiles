@@ -10,8 +10,16 @@ return {
     -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
     lazy = false,
     keys = {
-      { "<leader>e", "<cmd>Oil<cr>", mode = "n", desc = "Oil current buffer's directory" },
-      { "<leader>E", "<cmd>Oil .<cr>", mode = "n", desc = "Oil ." },
+      {
+        "<leader>e", function()
+          require("oil").open_float()
+        end, desc = "Oil current buffer's directory",
+      },
+      {
+        "<leader>E", function()
+          require("oil").open_float(".")
+        end, desc = "Oil current directory",
+      },
     },
   }
 }
