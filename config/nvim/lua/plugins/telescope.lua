@@ -3,7 +3,7 @@ return {
     "https://github.com/nvim-telescope/telescope.nvim",
     branch = "0.1.x",
     dependencies = {
-      "nvim-lua/plenary.nvim",
+      "https://github.com/nvim-lua/plenary.nvim.git",
       {
         "https://github.com/nvim-telescope/telescope-fzf-native.nvim",
         build = "make",
