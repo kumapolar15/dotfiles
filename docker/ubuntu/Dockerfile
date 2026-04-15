@@ -13,8 +13,16 @@ ENV LC_ALL ja_JP.UTF-8
 
 # Install zsh, make, etc.
 RUN apt-get update && \
-    apt-get install -y zsh make sudo curl git tmux fzf golang neovim fd-find bat eza ripgrep
+    apt-get install -y zsh make sudo curl git tmux fzf golang fd-find bat eza ripgrep
 ENV TERM xterm-256color
+
+# Install neovim latest version
+RUN curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-arm64.tar.gz \
+  && rm -rf /opt/nvim \
+  && mkdir -p /opt/nvim \
+  && tar -C /opt/nvim --strip-components=1 -xzf nvim-linux-arm64.tar.gz \
+  && rm nvim-linux-arm64.tar.gz
+ENV PATH="/opt/nvim/bin:${PATH}"
 
 # Install starship
 RUN curl -fsSL https://starship.rs/install.sh | sh -s -- -y
