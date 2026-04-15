@@ -28,4 +28,12 @@ return {
       },
     },
   },
+  {
+    "https://github.com/MeanderingProgrammer/render-markdown.nvim.git",
+    dependencies = {
+      "https://github.com/nvim-treesitter/nvim-treesitter.git",
+      "https://github.com/nvim-tree/nvim-web-devicons.git",
+    },
+    opts = {},
+  },
 }
