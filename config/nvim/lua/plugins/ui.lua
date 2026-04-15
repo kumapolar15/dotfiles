@@ -13,4 +13,9 @@ return {
       },
     },
   },
+  {
+    "https://github.com/nacro90/numb.nvim.git",
+    event = "VeryLazy",
+    opts = {},
+  },
 }
