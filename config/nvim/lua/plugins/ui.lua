@@ -18,4 +18,14 @@ return {
     event = "VeryLazy",
     opts = {},
   },
+  {
+    "https://github.com/uga-rosa/ccc.nvim.git",
+    event = "VeryLazy",
+    opts = {
+      highlighter = {
+        auto_enable = true,
+        lsp = true,
+      },
+    },
+  },
 }
