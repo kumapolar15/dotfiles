@@ -63,5 +63,17 @@ return {
         map({ "o", "x" }, "ih", gitsigns.select_hunk, { desc = "inner hunk" })
       end
     },
-  }
+  },
+  {
+    "https://github.com/sindrets/diffview.nvim.git",
+    cmd = {
+      "DiffviewOpen",
+      "DiffviewClose",
+      "DiffviewToggleFiles",
+      "DiffviewFocusFiles",
+      "DiffviewRefresh",
+      "DiffviewFileHistory",
+      "DiffviewLog",
+    },
+  },
 }
