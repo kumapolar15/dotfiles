@@ -10,6 +10,7 @@ return {
         pattern = "iceberg",
         callback = function()
           -- Iceberg highlights for external plugins
+          vim.api.nvim_set_hl(0, "GitSignsCurrentLineBlame", { link = "Comment" })
         end,
       })
       vim.cmd([[colorscheme iceberg]])
