@@ -76,4 +76,14 @@ return {
       },
     },
   },
+  {
+    "https://github.com/wansmer/treesj.git",
+    dependencies = {
+      "https://github.com/nvim-treesitter/nvim-treesitter.git",
+    },
+    cmd = { "TSJToggle", "TSJSplit", "TSJJoin" },
+    opts = {
+      use_default_keymaps = false,
+    },
+  },
 }
