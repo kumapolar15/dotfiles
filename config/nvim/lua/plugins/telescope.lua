@@ -1,7 +1,7 @@
 return {
   {
     "https://github.com/nvim-telescope/telescope.nvim",
-    branch = "0.1.x",
+    version = "^0.2.0",
     dependencies = {
       "https://github.com/nvim-lua/plenary.nvim.git",
       {
