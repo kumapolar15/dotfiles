@@ -76,4 +76,22 @@ return {
       "DiffviewLog",
     },
   },
+  {
+    "https://github.com/kdheepak/lazygit.nvim.git",
+    dependencies = {
+      "https://github.com/nvim-lua/plenary.nvim.git",
+    },
+    cmd = {
+      "LazyGit",
+      "LazyGitConfig",
+      "LazyGitCurrentFile",
+      "LazyGitFilter",
+      "LazyGitFilterCurrentFile",
+    },
+    keys = {
+      { "<leader>gg", function()
+        require("lazygit").lazygit()
+      end, desc = "LazyGit", }
+    },
+  },
 }
