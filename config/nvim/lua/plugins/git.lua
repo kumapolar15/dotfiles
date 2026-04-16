@@ -94,4 +94,30 @@ return {
       end, desc = "LazyGit", }
     },
   },
+  {
+    "https://github.com/ruifm/gitlinker.nvim.git",
+    dependencies = {
+      "https://github.com/nvim-lua/plenary.nvim.git",
+    },
+    keys = {
+      { "<leader>gY", function()
+        local gitlinker = require("gitlinker")
+        local gitlinkerActions = require("gitlinker.actions")
+        gitlinker.get_buf_range_url("n", { action_callback = gitlinkerActions.open_in_browser })
+      end, mode = "n", desc = "Git Browse (copy)" },
+      { "<leader>gY", function()
+        local gitlinker = require("gitlinker")
+        local gitlinkerActions = require("gitlinker.actions")
+        gitlinker.get_buf_range_url("v", { action_callback = gitlinkerActions.open_in_browser })
+      end, mode = "v", desc = "Git Browse (copy)" },
+      { "<leader>gB", function()
+        local gitlinker = require("gitlinker")
+        local gitlinkerActions = require("gitlinker.actions")
+        gitlinker.get_repo_url({ action_callback = gitlinkerActions.open_in_browser })
+      end, mode = "n", desc = "Git Browse (open)" },
+    },
+    opts = {
+      mappings = nil,
+    },
+  },
 }
