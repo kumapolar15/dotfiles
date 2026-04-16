@@ -24,5 +24,26 @@ return {
     },
     opts = {},
   },
+  {
+    "https://github.com/tpope/vim-eunuch.git",
+    cmd = {
+      "Remove",
+      "Delete",
+      "Move",
+      "Rename",
+      "Copy",
+      "Duplicate",
+      "Chmod",
+      "Mkdir",
+      "Cfind",
+      "Clocate",
+      "Lfind",
+      "Llocate",
+      "Wall",
+      "SudoWrite",
+      "SudoEdit",
+    },
+    opts = {},
+  },
 }
 
