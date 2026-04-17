@@ -22,7 +22,6 @@ return {
       "GDelete",
       "GBrowse",
     },
-    opts = {},
   },
   {
     "https://github.com/tpope/vim-eunuch.git",
@@ -43,7 +42,6 @@ return {
       "SudoWrite",
       "SudoEdit",
     },
-    opts = {},
   },
 }
 
