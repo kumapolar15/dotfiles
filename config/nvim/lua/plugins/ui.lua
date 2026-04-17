@@ -36,4 +36,72 @@ return {
     },
     opts = {},
   },
+  {
+    "https://github.com/b0o/incline.nvim.git",
+    dependencies = {
+      "https://github.com/nvim-tree/nvim-web-devicons.git",
+    },
+    event = "VeryLazy",
+    config = function()
+      local helpers = require("incline.helpers")
+      local devicons = require("nvim-web-devicons")
+      require("incline").setup({
+        window = {
+          margin = {
+            horizontal = 0,
+            vertical = 1,
+          },
+          padding = 0,
+          placement = {
+            horizontal = "right",
+            vertical = "bottom",
+          },
+        },
+        render = function(props)
+          local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ":t")
+          if filename == "" then
+            filename = "[No Name]"
+          end
+          local ft_icon, ft_color = devicons.get_icon_color(filename)
+          local modified = vim.bo[props.buf].modified
+
+          local get_diagnostic_label = function()
+            local icons = { error = '', warn = '', info = '', hint = '' }
+            local label = {}
+
+            for severity, icon in pairs(icons) do
+              local n = #vim.diagnostic.get(props.buf, { severity = vim.diagnostic.severity[string.upper(severity)] })
+              if n > 0 then
+                table.insert(label, { icon .. n .. " ", group = "DiagnosticSign" .. severity })
+              end
+            end
+            if #label > 0 then
+              table.insert(label, { "┊ " })
+            end
+            return label
+          end
+
+          local get_filename_label = function()
+            local errorCount = #vim.diagnostic.get(props.buf, { severity = vim.diagnostic.severity["Error"] })
+            if errorCount > 0 then
+              return { filename, group = "DiagnosticSignError" }
+            end
+            local warnCount = #vim.diagnostic.get(props.buf, { severity = vim.diagnostic.severity["Warn"] })
+            if warnCount > 0 then
+              return { filename, group = "DiagnosticSignWarn" }
+            end
+          end
+
+          return {
+            " ",
+            { get_diagnostic_label() },
+            { (ft_icon or "") .. " ", guifg = ft_color } or "",
+            { filename .. " ", gui = "bold" },
+            { (modified and "" or "") .. " " },
+            group = "Visual",
+          }
+        end,
+      })
+    end,
+  },
 }
