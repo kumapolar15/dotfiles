@@ -106,4 +106,27 @@ return {
       })
     end,
   },
+  {
+    "https://github.com/nvim-lualine/lualine.nvim.git",
+    dependencies = {
+      "https://github.com/nvim-tree/nvim-web-devicons.git",
+    },
+    config = function()
+      require("lualine").setup({
+        options = {
+          theme = "auto",
+          component_separators = { left = '', right = '┊' },
+          section_separators = { left = '', right = ''},
+        },
+        sections = {
+          lualine_a = { "mode" },
+          lualine_b = { "branch", "diff" },
+          lualine_c = {},
+          lualine_x = { "encoding", "fileformat", { "filetype", colored = false } },
+          lualine_y = { "progress" },
+          lualine_z = { "location" },
+        },
+      })
+    end
+  },
 }
