@@ -1,11 +1,11 @@
 return {
   {
-    "https://github.com/nvim-telescope/telescope.nvim",
+    "https://github.com/nvim-telescope/telescope.nvim.git",
     version = "^0.2.0",
     dependencies = {
       "https://github.com/nvim-lua/plenary.nvim.git",
       {
-        "https://github.com/nvim-telescope/telescope-fzf-native.nvim",
+        "https://github.com/nvim-telescope/telescope-fzf-native.nvim.git",
         build = "make",
       },
     },
