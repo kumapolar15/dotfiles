@@ -131,6 +131,7 @@ return {
   },
   {
     "https://github.com/rcarriga/nvim-notify.git",
+    event = "VeryLazy",
     opts = {
       icons = {
         DEBUG = "",
@@ -141,6 +142,19 @@ return {
       },
       render = "default",
       stages = "fade",
+    },
+  },
+  {
+    "https://github.com/folke/noice.nvim.git",
+    dependencies = {
+      "https://github.com/MunifTanjim/nui.nvim.git",
+      "https://github.com/rcarriga/nvim-notify.git",
+    },
+    event = "VeryLazy",
+    opts = {
+      presets = {
+        bottom_search = true,
+      },
     },
   },
 }
