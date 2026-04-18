@@ -97,7 +97,7 @@ return {
             { get_diagnostic_label() },
             { (ft_icon or "") .. " ", guifg = ft_color } or "",
             { filename .. " ", gui = "bold" },
-            { (modified and "" or "") .. " " },
+            { (modified and "" or "") .. " ", group = "Title" },
             group = "Visual",
           }
         end,
