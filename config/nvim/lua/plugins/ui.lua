@@ -157,4 +157,29 @@ return {
       },
     },
   },
+  {
+    "https://github.com/andersevenrud/nvim_context_vt.git",
+    event = "VeryLazy",
+    opts = {
+      enabled = true,
+      prefix = "",
+    },
+  },
+  {
+    "https://github.com/shellraining/hlchunk.nvim.git",
+    event = "VeryLazy",
+    config = function()
+      local chunkColorNormal = vim.api.nvim_get_hl(0, { name = "Constant" })
+      local chunkColorError = vim.api.nvim_get_hl(0, { name = "ErrorMsg" })
+      require("hlchunk").setup({
+        chunk = {
+          enable = true,
+          style = {
+            { fg = chunkColorNormal.fg },
+            { fg = chunkColorError.fg },
+          },
+        },
+      })
+    end
+  },
 }
