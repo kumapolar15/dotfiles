@@ -129,4 +129,18 @@ return {
       })
     end
   },
+  {
+    "https://github.com/rcarriga/nvim-notify.git",
+    opts = {
+      icons = {
+        DEBUG = "",
+        ERROR = "",
+        INFO = "",
+        TRACE = "",
+        WARN = "",
+      },
+      render = "default",
+      stages = "fade",
+    },
+  },
 }
