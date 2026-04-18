@@ -63,6 +63,7 @@ return {
             filename = "[No Name]"
           end
           local ft_icon, ft_color = devicons.get_icon_color(filename)
+          local readonly = vim.bo[props.buf].readonly
           local modified = vim.bo[props.buf].modified
 
           local get_diagnostic_label = function()
@@ -95,8 +96,9 @@ return {
           return {
             " ",
             { get_diagnostic_label() },
-            { (ft_icon or "") .. " ", guifg = ft_color } or "",
+            { (ft_icon or "") .. " ", guifg = ft_color },
             { filename .. " ", gui = "bold" },
+            { (readonly and "" or "") },
             { (modified and "" or "") .. " ", group = "Title" },
             group = "Visual",
           }
