@@ -1,12 +1,18 @@
 return {
   {
-    'https://github.com/stevearc/oil.nvim.git',
+    "https://github.com/stevearc/oil.nvim.git",
     ---@module 'oil'
     ---@type oil.SetupOpts
     opts = {},
     -- Optional dependencies
     -- dependencies = { { "nvim-mini/mini.icons", opts = {} } },
-    dependencies = { "https://github.com/nvim-tree/nvim-web-devicons.git" }, -- use if you prefer nvim-web-devicons
+    dependencies = {
+      "https://github.com/nvim-tree/nvim-web-devicons.git",
+      {
+        "https://github.com/benomahony/oil-git.nvim.git",
+        opts = {},
+      },
+    }, -- use if you prefer nvim-web-devicons
     -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
     lazy = false,
     keys = {
@@ -21,6 +27,6 @@ return {
         end, desc = "Oil current directory",
       },
     },
-  }
+  },
 }
 
