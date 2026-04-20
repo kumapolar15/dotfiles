@@ -25,14 +25,20 @@ RUN curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linu
 ENV PATH="/opt/nvim/bin:${PATH}"
 
 # Install starship
-RUN curl -fsSL https://starship.rs/install.sh | sh -s -- -y
+RUN curl -fsSL https://starship.rs/install.sh | sh -s -- -y \
+  && hash -r \
+  && /usr/local/bin/starship --version
 
 # Install sheldon
 RUN curl --proto '=https' -fsSL https://rossmacarthur.github.io/install/crate.sh \
-    | bash -s -- -y --repo rossmacarthur/sheldon --to /usr/local/bin
+  | bash -s -- -y --repo rossmacarthur/sheldon --to /usr/local/bin \
+  && hash -r \
+  && /usr/local/bin/sheldon --version
 
 # Install ghq
-RUN GOBIN=/usr/local/bin go install github.com/x-motemen/ghq@latest
+RUN GOBIN=/usr/local/bin go install github.com/x-motemen/ghq@latest \
+  && hash -r \
+  && /usr/local/bin/ghq --version
 
 # Install lazygit
 RUN LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | \grep -Po '"tag_name": *"v\K[^"]*') \
@@ -40,7 +46,9 @@ RUN LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygi
   && curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/download/v${LAZYGIT_VERSION}/lazygit_${LAZYGIT_VERSION}_Linux_${LAZYGIT_ARCH}.tar.gz" \
   && tar xf lazygit.tar.gz lazygit \
   && install lazygit -D -t /usr/local/bin \
-  && rm lazygit.tar.gz lazygit
+  && rm lazygit.tar.gz lazygit \
+  && hash -r \
+  && /usr/local/bin/lazygit --version
 
 RUN mkdir ./dotfiles
 
