@@ -83,13 +83,13 @@ return {
           end
 
           local get_filename_label = function()
-            local errorCount = #vim.diagnostic.get(props.buf, { severity = vim.diagnostic.severity["Error"] })
+            local errorCount = #vim.diagnostic.get(props.buf, { severity = vim.diagnostic.severity["ERROR"] })
             if errorCount > 0 then
-              return { filename, group = "DiagnosticSignError" }
+              return { filename .. " ", group = "DiagnosticSignError", gui = "bold" }
             end
-            local warnCount = #vim.diagnostic.get(props.buf, { severity = vim.diagnostic.severity["Warn"] })
+            local warnCount = #vim.diagnostic.get(props.buf, { severity = vim.diagnostic.severity["WARN"] })
             if warnCount > 0 then
-              return { filename, group = "DiagnosticSignWarn" }
+              return { filename .. " ", group = "DiagnosticSignWarn", gui = "bold" }
             end
           end
 
@@ -97,7 +97,7 @@ return {
             " ",
             { get_diagnostic_label() },
             { (ft_icon or "") .. " ", guifg = ft_color },
-            { filename .. " ", gui = "bold" },
+            { get_filename_label() },
             { (readonly and "" or "") },
             { (modified and "" or "") .. " ", group = "Title" },
             group = "Visual",
