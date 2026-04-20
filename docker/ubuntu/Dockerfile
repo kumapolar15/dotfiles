@@ -13,7 +13,7 @@ ENV LC_ALL ja_JP.UTF-8
 
 # Install zsh, make, etc.
 RUN apt-get update && \
-    apt-get install -y zsh make sudo curl git tmux fzf golang fd-find bat eza ripgrep
+    apt-get install -y zsh make sudo curl git tmux fzf golang fd-find bat eza ripgrep unzip wget
 ENV TERM xterm-256color
 
 # Install neovim latest version
