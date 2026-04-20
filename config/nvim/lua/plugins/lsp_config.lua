@@ -21,4 +21,13 @@ return {
       vim.lsp.enable(ensure_installed)
     end
   },
+  {
+    "https://github.com/folke/lazydev.nvim.git",
+    ft = "lua",
+    opts = {
+      library = {
+        { path = "${3rd}lub/library", words = { "vim%.uv" } },
+      },
+    },
+  },
 }
