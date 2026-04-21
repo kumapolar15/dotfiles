@@ -7,6 +7,7 @@ return {
         opts = {},
       },
       "https://github.com/neovim/nvim-lspconfig.git",
+      "https://github.com/hrsh7th/cmp-nvim-lsp.git"
     },
     config = function()
       local ensure_installed = {
@@ -17,6 +18,10 @@ return {
       require("mason-lspconfig").setup({
         automatic_installation = true,
         ensure_installed = ensure_installed,
+      })
+      local capabilities = require("cmp_nvim_lsp").default_capabilities()
+      vim.lsp.config("*", {
+        capabilities = capabilities,
       })
       vim.lsp.enable(ensure_installed)
     end

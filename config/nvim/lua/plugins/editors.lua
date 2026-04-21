@@ -116,4 +116,133 @@ return {
       use_default_keymaps = false,
     },
   },
+  {
+    "https://github.com/hrsh7th/nvim-cmp.git",
+    dependencies = {
+      -- Snipets
+      {
+        "https://github.com/L3MON4D3/LuaSnip.git",
+        dependencies = {
+          "https://github.com/rafamadriz/friendly-snippets.git",
+        },
+        build = "make install_jsregexp",
+        config = function()
+          require("luasnip.loaders.from_vscode").lazy_load()
+        end,
+      },
+      "https://github.com/saadparwaiz1/cmp_luasnip.git",
+      -- Buffer, Vim-fuiltin functionality
+      "https://github.com/hrsh7th/cmp-buffer.git",
+      "https://github.com/hrsh7th/cmp-calc.git",
+      -- LSP
+      "https://github.com/neovim/nvim-lspconfig.git",
+      "https://github.com/hrsh7th/cmp-nvim-lsp.git",
+      "https://github.com/hrsh7th/cmp-nvim-lsp-signature-help.git",
+      -- Filesystem paths
+      "https://github.com/hrsh7th/cmp-path.git",
+      -- Command line
+      "https://github.com/hrsh7th/cmp-cmdline.git",
+      -- Icons, Symbols, and Emojis
+      "https://github.com/hrsh7th/cmp-emoji.git",
+      "https://github.com/chrisgrieser/cmp-nerdfont.git",
+    },
+    event = "InsertEnter",
+    config = function()
+      local cmp = require("cmp")
+      local luasnip = require("luasnip")
+      cmp.setup({
+        snippet = {
+          expand = function(args)
+            luasnip.lsp_expand(args.body)
+          end
+        },
+        window = {},
+        mapping = cmp.config.mapping.preset.insert({
+          ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+          ["<C-f>"] = cmp.mapping.scroll_docs(4),
+          ["<C-Space>"] = cmp.mapping.complete(),
+          ["<C-e>"] = cmp.mapping.abort(),
+          ["<CR>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              if luasnip.expandable() then
+                luasnip.expand()
+              else
+                cmp.confirm({ select = true })
+              end
+            else
+              fallback()
+            end
+          end),
+          ["<C-n>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              cmp.select_next_item()
+            elseif luasnip.locally_jumpable(1) then
+              luasnip.jump(1)
+            else
+              fallback()
+            end
+          end, { "i", "s" }),
+          ["<C-p>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              cmp.select_prev_item()
+            elseif luasnip.locally_jumpable(-1) then
+              luasnip.jump(-1)
+            else
+              fallback()
+            end
+          end, { "i", "s" }),
+          ["<Tab>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              cmp.select_next_item()
+            elseif luasnip.locally_jumpable(1) then
+              luasnip.jump(1)
+            else
+              fallback()
+            end
+          end, { "i", "s" }),
+          ["<S-Tab>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              cmp.select_prev_item()
+            elseif luasnip.locally_jumpable(-1) then
+              luasnip.jump(-1)
+            else
+              fallback()
+            end
+          end, { "i", "s" }),
+        }),
+        sources = cmp.config.sources({
+          { name = "calc" },
+          { name = "nvim_lsp" },
+          { name = "emoji" },
+          { name = "nerdfont" },
+        }, {
+          { name = "buffer" },
+        }),
+      })
+
+      cmp.setup.cmdline({ "/", "?" }, {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = {
+          { name = "buffer" }
+        },
+      })
+
+      cmp.setup.cmdline(":", {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = cmp.config.sources({
+          { name = "path" },
+        }, {
+          { name = "cmdline" },
+        }),
+        matching = {
+          disallow_fuzzy_matching = false,
+          disallow_fullfuzzy_matching = false,
+          disallow_partial_fuzzy_matching = true,
+          disallow_partial_matching = false,
+          disallow_prefix_unmatching = false,
+          disallow_symbol_nonprefix_matching = true,
+        },
+      })
+    end,
+  },
 }
