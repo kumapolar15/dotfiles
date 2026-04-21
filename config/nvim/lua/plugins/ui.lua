@@ -43,7 +43,6 @@ return {
     },
     event = "VeryLazy",
     config = function()
-      local helpers = require("incline.helpers")
       local devicons = require("nvim-web-devicons")
       require("incline").setup({
         window = {
