@@ -110,8 +110,11 @@ return {
     "https://github.com/nvim-lualine/lualine.nvim.git",
     dependencies = {
       "https://github.com/nvim-tree/nvim-web-devicons.git",
+      "https://github.com/SmiteshP/nvim-navic.git",
     },
     config = function()
+      local navic = require("nvim-navic")
+
       require("lualine").setup({
         options = {
           theme = "auto",
@@ -125,6 +128,18 @@ return {
           lualine_x = { "encoding", "fileformat", { "filetype", colored = false } },
           lualine_y = { "progress" },
           lualine_z = { "location" },
+        },
+        winbar = {
+          lualine_c = {
+            {
+              function()
+                return navic.get_location()
+              end,
+              cond = function()
+                return navic.is_available()
+              end,
+            },
+          },
         },
       })
     end
@@ -185,5 +200,48 @@ return {
   {
     "https://github.com/j-hui/fidget.nvim.git",
     opts = {},
+  },
+  {
+    "https://github.com/SmiteshP/nvim-navic.git",
+    dependencies = {
+      "https://github.com/neovim/nvim-lspconfig.git",
+    },
+    opts = {
+      icons = {
+        File = ' ',
+        Module = ' ',
+        Namespace = ' ',
+        Package = ' ',
+        Class = ' ',
+        Method = ' ',
+        Property = ' ',
+        Field = ' ',
+        Constructor = ' ',
+        Enum = ' ',
+        Interface = ' ',
+        Function = ' ',
+        Variable = ' ',
+        Constant = ' ',
+        String = ' ',
+        Number = ' ',
+        Boolean = ' ',
+        Array = ' ',
+        Object = ' ',
+        Key = ' ',
+        Null = ' ',
+        EnumMember = ' ',
+        Struct = ' ',
+        Event = ' ',
+        Operator = ' ',
+        TypeParameter = ' '
+      },
+      lsp = {
+        auto_attach = true,
+        preference = nil,
+      },
+      highlight = false, -- TODO: Enable this after defining Iceberg-themed highlights.
+      separator = " > ",
+      depth_limit = 9,
+    },
   },
 }
