@@ -147,7 +147,7 @@ return {
       "https://github.com/hrsh7th/cmp-emoji.git",
       "https://github.com/chrisgrieser/cmp-nerdfont.git",
     },
-    event = "InsertEnter",
+    event = "VeryLazy",
     config = function()
       local cmp = require("cmp")
       local luasnip = require("luasnip")
