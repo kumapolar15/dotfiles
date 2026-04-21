@@ -91,6 +91,7 @@ return {
             if warnCount > 0 then
               return { filename .. " ", group = "DiagnosticSignWarn", gui = "bold" }
             end
+            return { filename .. " ", gui = "bold" }
           end
 
           return {
