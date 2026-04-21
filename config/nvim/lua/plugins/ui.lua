@@ -244,4 +244,12 @@ return {
       depth_limit = 9,
     },
   },
+  {
+    "https://github.com/nvimdev/dashboard-nvim.git",
+    dependencies = {
+      "https://github.com/nvim-tree/nvim-web-devicons.git",
+    },
+    event = "VimEnter",
+    opts = {},
+  },
 }
