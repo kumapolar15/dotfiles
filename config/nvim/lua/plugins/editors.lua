@@ -113,6 +113,11 @@ return {
       "https://github.com/nvim-treesitter/nvim-treesitter.git",
     },
     cmd = { "TSJToggle", "TSJSplit", "TSJJoin" },
+    keys = {
+      { "<S-j>", function()
+        require("treesj").toggle()
+      end, desc = "TSJToggle"},
+    },
     opts = {
       use_default_keymaps = false,
     },
