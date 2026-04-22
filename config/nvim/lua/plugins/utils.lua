@@ -44,5 +44,18 @@ return {
       "SudoEdit",
     },
   },
+  {
+    "https://github.com/akinsho/toggleterm.nvim.git",
+    cmd = { "ToggleTerm" },
+    keys = {
+      { "<C-\\>", "<cmd>ToggleTerm<CR>", desc = "Toggle Terminal" },
+      { "<C-¥>", "<cmd>ToggleTerm<CR>", desc = "Toggle Terminal" },
+    },
+    opts = {
+      open_mapping = { [[<c-\>]], [[<c-¥>]] },
+      direction = "horizontal",
+      size = 20,
+    },
+  },
 }
 
