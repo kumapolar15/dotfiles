@@ -4,6 +4,7 @@ return {
     cmd = "StartupTime",
     init = function()
       vim.g.startuptime_tries = 10
+      vim.g.startuptime_exe_args = { "--headless" }
     end,
   },
   {

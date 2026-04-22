@@ -112,6 +112,7 @@ return {
       "https://github.com/nvim-tree/nvim-web-devicons.git",
       "https://github.com/SmiteshP/nvim-navic.git",
     },
+    event = "VeryLazy",
     config = function()
       local navic = require("nvim-navic")
 
