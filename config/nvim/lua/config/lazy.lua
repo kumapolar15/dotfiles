@@ -21,6 +21,9 @@ require("lazy").setup({
     -- import your plugins
     { import = "plugins" },
   },
+  rocks = {
+    server = "https://lumen-oss.github.io/rocks-binaries/",
+  }, -- to get hererocks support
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
   install = { colorscheme = { "iceberg" } },
