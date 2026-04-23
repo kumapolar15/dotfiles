@@ -57,30 +57,5 @@ return {
       size = 20,
     },
   },
-  {
-    "https://github.com/rest-nvim/rest.nvim.git",
-    dependencies = {
-      "https://github.com/j-hui/fidget.nvim.git",
-      "https://github.com/nvim-neotest/nvim-nio.git",
-      {
-        -- Lazy.nvim does not recognize this library's rocksfile, so add it
-        -- to package path manually.
-        "https://github.com/manoelcampos/xml2lua.git",
-        config = function (plugin)
-          package.path = package.path .. ";" .. plugin.dir .. "/?.lua"
-        end,
-      },
-      "https://github.com/lunarmodules/lua-mimetypes.git",
-      {
-        "https://github.com/nvim-treesitter/nvim-treesitter.git",
-        opts = function (_, opts)
-          opts.ensure_installed = opts.ensure_installed or {}
-          table.insert(opts.ensure_installed, "http")
-        end,
-      },
-    },
-    ft = "http",
-    build = false,
-  },
 }
 
