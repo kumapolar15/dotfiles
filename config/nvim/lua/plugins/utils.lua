@@ -57,5 +57,14 @@ return {
       size = 20,
     },
   },
+  {
+    "https://github.com/mistweaverco/kulala.nvim.git",
+    ft = { "http", "rest" },
+    opts = {
+      global_keymaps = false,
+      global_keymaps_prefix = "<leader>R",
+      kulala_keymaps_prefix = "",
+    },
+  },
 }
 
