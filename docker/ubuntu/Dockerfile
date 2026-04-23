@@ -13,8 +13,16 @@ ENV LC_ALL ja_JP.UTF-8
 
 # Install zsh, make, etc.
 RUN apt-get update && \
-    apt-get install -y zsh make sudo curl git tmux fzf golang fd-find bat eza ripgrep unzip wget
+    apt-get install -y zsh make sudo curl git tmux fzf golang fd-find bat eza ripgrep unzip wget luarocks
 ENV TERM xterm-256color
+
+# Install npm
+RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash - \
+  && apt-get install -y nodejs \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/* \
+  && node -v && npm -v
+RUN npm install -g tree-sitter-cli
 
 # Install neovim latest version
 RUN curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-arm64.tar.gz \
