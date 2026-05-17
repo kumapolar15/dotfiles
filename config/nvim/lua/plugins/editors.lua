@@ -161,6 +161,8 @@ return {
         formatting = {
           fields = { 'abbr', 'icon', 'kind', 'menu'},
           format = lspkind.cmp_format({
+            preset = "codicons",
+            symbol_map = { Copilot = "" },
             maxwidth = { abbr = 50, menu = 50 },
             ellipsis_char = '...',
             show_labelDetails = true,
@@ -174,7 +176,10 @@ return {
             luasnip.lsp_expand(args.body)
           end
         },
-        window = {},
+        window = {
+          completion = cmp.config.window.bordered(),
+          documentation = cmp.config.window.bordered(),
+        },
         mapping = cmp.config.mapping.preset.insert({
           ["<C-b>"] = cmp.mapping.scroll_docs(-4),
           ["<C-f>"] = cmp.mapping.scroll_docs(4),
@@ -230,6 +235,7 @@ return {
         }),
         sources = cmp.config.sources({
           { name = "calc" },
+          { name = "copilot" },
           { name = "nvim_lsp" },
           { name = "emoji" },
           { name = "nerdfont" },
@@ -266,5 +272,26 @@ return {
   {
     "https://github.com/onsails/lspkind.nvim.git",
     lazy = true,
+  },
+  {
+    "https://github.com/zbirenbaum/copilot.lua.git",
+    cmd = "Copilot",
+    build = ":Copilot auth",
+    event = "InsertEnter",
+    config = function ()
+      require("copilot").setup({
+        suggestion = { enabled = false },
+        panel = { enabled = false },
+      })
+    end,
+  },
+  {
+    "https://github.com/zbirenbaum/copilot-cmp.git",
+    event = { "InsertEnter", "LspAttach" },
+    config = function ()
+      require("copilot_cmp").setup({
+        fix_pairs = true,
+      })
+    end,
   },
 }
