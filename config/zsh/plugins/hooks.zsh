@@ -18,7 +18,7 @@ chpwd(){
   if [[ $(pwd) = "$HOME" ]]; then
     echo "Welcome home!"
   else
-    line_count=$(\find . | head -n $((LIMIT_DISABLE_SORT_COUNT + 1)) | wc -l)
+    line_count=$(\find . -maxdepth 1 | head -n $((LIMIT_DISABLE_SORT_COUNT + 1)) | wc -l)
 
     if [[ "$line_count" -le "$DISPLAY_ROWS" ]];then
       __chpwd_ll $DISPLAY_ROWS
