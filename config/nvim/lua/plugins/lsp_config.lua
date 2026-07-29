@@ -14,7 +14,6 @@ return {
         "lua_ls",
         "stylua",
         "ts_ls",
-        "copilot",
       }
       require("mason-lspconfig").setup({
         automatic_installation = true,
