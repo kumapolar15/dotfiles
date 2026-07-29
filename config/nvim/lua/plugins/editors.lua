@@ -156,7 +156,19 @@ return {
     config = function()
       local cmp = require("cmp")
       local luasnip = require("luasnip")
+      local lspkind = require("lspkind")
       cmp.setup({
+        formatting = {
+          fields = { 'abbr', 'icon', 'kind', 'menu'},
+          format = lspkind.cmp_format({
+            maxwidth = { abbr = 50, menu = 50 },
+            ellipsis_char = '...',
+            show_labelDetails = true,
+            before = function (_, vim_item)
+              return vim_item
+            end
+          })
+        },
         snippet = {
           expand = function(args)
             luasnip.lsp_expand(args.body)
@@ -250,5 +262,9 @@ return {
         },
       })
     end,
+  },
+  {
+    "https://github.com/onsails/lspkind.nvim.git",
+    lazy = true,
   },
 }
